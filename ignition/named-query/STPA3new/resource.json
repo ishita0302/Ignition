@@ -1,0 +1,45 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "NewConnection",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "1ac7d62a18259b8e430cd82a5a9d5aa65184e86ebac34791eb085927abfc6348",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin_IoT_Lab",
+      "timestamp": "2025-07-14T12:06:10Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "StartDate",
+        "sqlType": 8
+      },
+      {
+        "type": "Parameter",
+        "identifier": "EndDate",
+        "sqlType": 8
+      }
+    ]
+  }
+}

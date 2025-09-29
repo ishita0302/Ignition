@@ -1,0 +1,328 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 377
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u00271PA\u0027)\n\tsystem.perspective.closePopup(\u0027MDpopup\u0027)\n\tsystem.perspective.closePopup(\u00273PA\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.0814,
+          "width": 0.0458,
+          "x": 0.9315,
+          "y": 0.0137
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "EndDate"
+        },
+        "position": {
+          "height": 0.0849,
+          "width": 0.2475,
+          "x": 0.6575,
+          "y": 0.0185
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "09/08/25 12:09"
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0849,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.16,
+          "x": 0.4844,
+          "y": 0.0185
+        },
+        "props": {
+          "text": "Select End Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "StartDate"
+        },
+        "position": {
+          "height": 0.0849,
+          "width": 0.2213,
+          "x": 0.2287,
+          "y": 0.0185
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "addDays(now(0),-1)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "09/07/25 12:09"
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0849,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.16,
+          "x": 0.0569,
+          "y": 0.0186
+        },
+        "props": {
+          "text": "Select Start Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "contextMenu": {
+            "style": {
+              "borderStyle": "groove"
+            }
+          },
+          "name": "1 PA trend"
+        },
+        "position": {
+          "height": 0.7994,
+          "width": 0.94,
+          "x": 0.0296,
+          "y": 0.1405
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "SinglePhaseAnalyzerTrend"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "grid": {
+                    "color": "",
+                    "dashArray": 0,
+                    "opacity": 0.9,
+                    "style": {
+                      "classes": ""
+                    },
+                    "visible": false
+                  },
+                  "label": {
+                    "font": {
+                      "color": "#00ACAC",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "Units",
+                    "visible": true
+                  },
+                  "max": 2,
+                  "min": 0,
+                  "name": "W/hr",
+                  "style": {
+                    "classes": ""
+                  },
+                  "tick": {
+                    "color": "#00ACAC",
+                    "count": 3,
+                    "label": {
+                      "font": {
+                        "color": "#00ACAC",
+                        "size": 12
+                      },
+                      "format": "Auto",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 60
+                }
+              ],
+              "markers": [],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "W/hr",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#FF8C00",
+                      "key": "EnergyConsumed",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 3
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Consumption",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Consumption"
+            }
+          ],
+          "timeAxis": {
+            "tick": {
+              "color": "#00ACAC",
+              "label": {
+                "font": {
+                  "color": "#00ACAC",
+                  "size": 14
+                },
+                "format": "MM/DD/YY"
+              }
+            },
+            "tickCount": 5
+          },
+          "timeRange": {
+            "visible": false
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.2393,
+      "y": -0.0836
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

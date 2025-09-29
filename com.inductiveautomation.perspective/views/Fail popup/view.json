@@ -1,0 +1,77 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 141,
+          "width": 184,
+          "x": 9,
+          "y": 29
+        },
+        "props": {
+          "style": {
+            "color": "#D90000",
+            "fontSize": 20,
+            "textAlign": "center"
+          },
+          "text": "Schedule already exists."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027myID2\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 17,
+          "width": 28,
+          "x": 163.96,
+          "y": 4.44
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "fail"
+    },
+    "props": {
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,795 @@
+{
+  "custom": {
+    "filteredChartData": "value",
+    "queryData": {
+      "$": [
+        "ds",
+        192,
+        1757587001859
+      ],
+      "$columns": [
+        {
+          "data": [
+            1757500500000,
+            1757500560000,
+            1757500620000,
+            1757500680000,
+            1757500740000
+          ],
+          "name": "DateTime",
+          "type": "Date"
+        },
+        {
+          "data": [
+            231.2899932861328,
+            231.41000366210938,
+            231.42999267578125,
+            231.0800018310547,
+            231.49000549316406
+          ],
+          "name": "Voltage",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0.18250000476837158,
+            0.1768999993801117,
+            0.18080000579357147,
+            0.17520000040531158,
+            0.17470000684261322
+          ],
+          "name": "Curren",
+          "type": "Double"
+        },
+        {
+          "data": [
+            -0.03618999943137169,
+            -0.035100001841783524,
+            -0.03587000072002411,
+            -0.03472999855875969,
+            -0.03466999903321266
+          ],
+          "name": "KVA",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0.02111000008881092,
+            0.02047000080347061,
+            0.020919999107718468,
+            0.020260000601410866,
+            0.02022000029683113
+          ],
+          "name": "KW",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "name": "PF",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "name": "Total",
+          "type": "Double"
+        },
+        {
+          "data": [
+            50.04999923706055,
+            50.04999923706055,
+            50.03300094604492,
+            49.983001708984375,
+            49.9739990234375
+          ],
+          "name": "Fr",
+          "type": "Double"
+        },
+        {
+          "data": [
+            25.75,
+            26.25,
+            25.5,
+            25.75,
+            26.25
+          ],
+          "name": "Sensor1",
+          "type": "Double"
+        },
+        {
+          "data": [
+            -13,
+            -13,
+            -13,
+            -13,
+            -13
+          ],
+          "name": "Sensor2",
+          "type": "Double"
+        },
+        {
+          "data": [
+            -31,
+            -31,
+            -31,
+            -31,
+            -31
+          ],
+          "name": "Sensor3",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "name": "Sensor4",
+          "type": "Double"
+        },
+        {
+          "data": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "name": "Sensor5",
+          "type": "Double"
+        },
+        {
+          "data": [
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "name": "Sensor6",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "name": "Sensor7",
+          "type": "Double"
+        },
+        {
+          "data": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "name": "Sensor8",
+          "type": "Double"
+        },
+        {
+          "data": [
+            "53.12",
+            "53.02",
+            "53.07",
+            "53.19",
+            "53.14"
+          ],
+          "name": "Urms",
+          "type": "String"
+        },
+        {
+          "data": [
+            "0.241",
+            "0.242",
+            "0.240",
+            "0.235",
+            "0.233"
+          ],
+          "name": "Irms",
+          "type": "String"
+        },
+        {
+          "data": [
+            "0.95",
+            "0.95",
+            "0.95",
+            "0.96",
+            "0.95"
+          ],
+          "name": "Lambda",
+          "type": "String"
+        },
+        {
+          "data": [
+            "21.08",
+            "21.06",
+            "20.89",
+            "20.68",
+            "20.37"
+          ],
+          "name": "P",
+          "type": "String"
+        },
+        {
+          "data": [
+            "22.20",
+            "22.16",
+            "21.98",
+            "21.63",
+            "21.36"
+          ],
+          "name": "S",
+          "type": "String"
+        },
+        {
+          "data": [
+            "72.18",
+            "72.24",
+            "72.14",
+            "72.61",
+            "72.53"
+          ],
+          "name": "fU1",
+          "type": "String"
+        },
+        {
+          "data": [
+            "72.13",
+            "72.05",
+            "72.58",
+            "72.74",
+            "72.68"
+          ],
+          "name": "fI1",
+          "type": "String"
+        }
+      ]
+    },
+    "selectedValue": null
+  },
+  "params": {},
+  "propConfig": {
+    "custom.filteredChartData": {
+      "persistent": true
+    },
+    "custom.queryData": {
+      "binding": {
+        "config": {
+          "parameters": {
+            "EndDate": "{/root/EndDate.props.value}",
+            "StartDate": "{/root/StartDate.props.value}"
+          },
+          "polling": {
+            "enabled": true,
+            "rate": "30"
+          },
+          "queryPath": "Joinall3Trend"
+        },
+        "type": "query"
+      },
+      "persistent": true
+    },
+    "custom.selectedValue": {
+      "binding": {
+        "config": {
+          "path": "/root/Dropdown.props.value"
+        },
+        "type": "property"
+      },
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 400,
+      "width": 1164
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EndDate"
+        },
+        "position": {
+          "height": 0.0533,
+          "width": 0.1366,
+          "x": 0.1343,
+          "y": 0.0924
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "09/11/25 16:09",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1076,
+          "x": 0.0178,
+          "y": 0.0899
+        },
+        "props": {
+          "text": "Select End Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "StartDate"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "100% 50%"
+          },
+          "width": 0.1345,
+          "x": 0.1336,
+          "y": 0.015
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "addDays(now(0),-1)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "09/10/25 16:09",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1151,
+          "x": 0.018,
+          "y": 0.0176
+        },
+        "props": {
+          "text": "Select Start Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 0.135,
+          "width": 0.4416,
+          "x": 0.5423,
+          "y": 0.025
+        },
+        "props": {
+          "multiSelect": true,
+          "options": [
+            {
+              "label": "1PhaseVoltage",
+              "value": "Voltage"
+            },
+            {
+              "label": "1PhaseCurrent",
+              "value": "Curren"
+            },
+            {
+              "label": "1PhaseKVA",
+              "value": "KVA"
+            },
+            {
+              "label": "1PhaseKW",
+              "value": "KW"
+            },
+            {
+              "label": "1PhasePF",
+              "value": "PF"
+            },
+            {
+              "label": "1PhaseTotal_KW",
+              "value": "Total"
+            },
+            {
+              "label": "1PhaseFrequency",
+              "value": "Fr"
+            },
+            {
+              "label": "Sensor1",
+              "value": "Sensor1"
+            },
+            {
+              "label": "Sensor2",
+              "value": "Sensor2"
+            },
+            {
+              "label": "Sensor3",
+              "value": "Sensor3"
+            },
+            {
+              "label": "Sensor4",
+              "value": "Sensor4"
+            },
+            {
+              "label": "Sensor5",
+              "value": "Sensor5"
+            },
+            {
+              "label": "Sensor6",
+              "value": "Sensor6"
+            },
+            {
+              "label": "Sensor7",
+              "value": "Sensor7"
+            },
+            {
+              "label": "Sensor8",
+              "value": "Sensor8"
+            },
+            {
+              "label": "3PhaseUrms",
+              "value": "Urms"
+            },
+            {
+              "label": "3PhaseIrms",
+              "value": "Irms"
+            },
+            {
+              "label": "3PhaseLambda",
+              "value": "Lambda"
+            },
+            {
+              "label": "3PhasePower",
+              "value": "P"
+            },
+            {
+              "label": "3Phase_S",
+              "value": "S"
+            },
+            {
+              "label": "3PhasefI1",
+              "value": "fI1"
+            },
+            {
+              "label": "3PhasefU1",
+              "value": "fU1"
+            },
+            {
+              "label": "All 1Phase",
+              "value": "All 1Phase"
+            },
+            {
+              "label": "All 3Phase",
+              "value": "All 3Phase"
+            },
+            {
+              "label": "All Meghdoot",
+              "value": "All Meghdoot"
+            },
+            {
+              "label": "All",
+              "value": "All"
+            }
+          ],
+          "showClearIcon": true,
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          },
+          "value": null
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.085,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1254,
+          "x": 0.4135,
+          "y": 0.0187
+        },
+        "props": {
+          "text": "Select Parameters"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\t# Get selected parameters\n\tselected_params_raw \u003d self.view.custom.selectedValue\n\tselected_params \u003d list(selected_params_raw)\n\t\n\t# Get full dataset from Named Query\n\traw_data \u003d self.view.custom.queryData\n\t\n\t# Convert dataset to Python format\n\tpy_data \u003d system.dataset.toPyDataSet(raw_data)\n\t\n\t# Ensure selected_params is a list\n\tif isinstance(selected_params, str):\n\t    selected_params \u003d [selected_params]\n\telif selected_params is None:\n\t    selected_params \u003d []\n\t\n\t# Prepare filtered dataset\n\theaders \u003d [\"DateTime\"] + selected_params\n\tfiltered_rows \u003d []\n\t\n\tfor row in py_data:\n\t    new_row \u003d [row[\"DateTime\"]]\n\t    for param in selected_params:\n\t        new_row.append(row[param])\n\t    filtered_rows.append(new_row)\n\t\n\t# Convert back to dataset\n\tfiltered_dataset \u003d system.dataset.toDataSet(headers, filtered_rows)\n\t\n\t# Store it in a custom property for chart binding\n\tself.view.custom.filteredChartData \u003d filtered_dataset"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0425,
+          "width": 0.0412,
+          "x": 0.4856,
+          "y": 0.0925
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if(len({../Dropdown.props.value}) \u003e 0, true, false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Show"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "contextMenu": {
+            "style": {
+              "borderStyle": "groove"
+            }
+          },
+          "name": "All trend"
+        },
+        "position": {
+          "height": 0.79,
+          "width": 0.988,
+          "x": 0.0064,
+          "y": 0.1944
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "path": "view.custom.filteredChartData"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "defaultStyles": {
+            "normal": {
+              "stroke": {
+                "width": 3
+              }
+            }
+          },
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "grid": {
+                    "color": "",
+                    "dashArray": 0,
+                    "opacity": 0.9,
+                    "style": {
+                      "classes": ""
+                    },
+                    "visible": false
+                  },
+                  "label": {
+                    "font": {
+                      "color": "#00ACAC",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "Units",
+                    "visible": true
+                  },
+                  "max": 500,
+                  "min": 0,
+                  "name": "W/hr",
+                  "style": {
+                    "classes": ""
+                  },
+                  "tick": {
+                    "color": "#00ACAC",
+                    "count": "Auto",
+                    "label": {
+                      "font": {
+                        "color": "#00ACAC",
+                        "size": 12
+                      },
+                      "format": "Auto",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 60
+                }
+              ],
+              "markers": [],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "W/hr",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#FF8C00",
+                      "key": "EnergyConsumed",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 10
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Consumption",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Consumption"
+            }
+          ],
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          },
+          "timeAxis": {
+            "tick": {
+              "color": "#00ACAC",
+              "label": {
+                "font": {
+                  "color": "#00ACAC",
+                  "size": 14
+                },
+                "format": "MM/DD/YY"
+              }
+            },
+            "tickCount": 5
+          },
+          "timeRange": {
+            "visible": false
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

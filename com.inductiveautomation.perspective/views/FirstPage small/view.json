@@ -1,0 +1,1030 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 900,
+      "width": 364
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "SimpleGauge_0"
+        },
+        "position": {
+          "height": 0.2267,
+          "width": 0.4904,
+          "x": 0.5088,
+          "y": 0.0557
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Water_Consumed},2)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "animate": true,
+          "arc": {
+            "color": "#0000FF"
+          },
+          "arcBackground": {
+            "color": "#FF8C00"
+          },
+          "endAngle": 405,
+          "label": {
+            "color": "#FF8C00",
+            "offsetY": 12
+          },
+          "maxValue": 3,
+          "startAngle": 135,
+          "style": {
+            "borderStyle": "solid"
+          }
+        },
+        "type": "ia.chart.simple-gauge"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": true,
+                "id": "nRSkxtEo",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewPath": "NestedView/DailyConsumptionTable",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.1878,
+          "width": 0.9973,
+          "x": 0.0029,
+          "y": 0.2825
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "DailyConsumptionTable"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "DD/MM/YYYY",
+              "editable": false,
+              "field": "ConsumptionDate",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "",
+                  "fontSize": 18
+                },
+                "title": "Date"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "",
+                "fontSize": 18
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "WaterConsumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "",
+                  "fontSize": 18
+                },
+                "title": "Water (KL)"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "",
+                "color": "#FF8C00",
+                "fontSize": 18
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "EnergyConsumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": "",
+                  "fontSize": 18
+                },
+                "title": "Energy (Units)"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "",
+                "color": "#FF8C00",
+                "fontSize": 18
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "activeOption": 2,
+            "options": [
+              2,
+              5,
+              7,
+              15,
+              25
+            ]
+          },
+          "selection": {
+            "enableRowSelection": false,
+            "style": {
+              "borderStyle": "groove",
+              "fontSize": 18
+            }
+          },
+          "style": {
+            "fontSize": 12
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.045,
+          "rotate": {
+            "anchor": "25% 50%"
+          },
+          "width": 0.092,
+          "x": 0.7065,
+          "y": 0.2005
+        },
+        "props": {
+          "text": "KLTR"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0517,
+          "width": 0.4827,
+          "x": 0.511,
+          "y": 0.0573
+        },
+        "props": {
+          "style": {
+            "textAlign": "center"
+          },
+          "text": "Water"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SimpleGauge"
+        },
+        "position": {
+          "height": 0.2278,
+          "width": 0.4981,
+          "x": 0.0023,
+          "y": 0.054
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Energy_Consumed},2)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "animate": true,
+          "arc": {
+            "color": "#FF0000"
+          },
+          "arcBackground": {
+            "color": "#00FFFF"
+          },
+          "endAngle": 405,
+          "label": {
+            "color": "#FF8C00",
+            "maxDecimal": 2,
+            "offsetY": 12
+          },
+          "maxValue": 350,
+          "startAngle": 135,
+          "style": {
+            "borderStyle": "solid"
+          }
+        },
+        "type": "ia.chart.simple-gauge"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0563,
+          "width": 0.4981,
+          "x": 0.0014,
+          "y": 0.0505
+        },
+        "props": {
+          "style": {
+            "textAlign": "center"
+          },
+          "text": "Energy"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0483,
+          "rotate": {
+            "anchor": "25% 50%"
+          },
+          "width": 0.092,
+          "x": 0.205,
+          "y": 0.2027
+        },
+        "props": {
+          "text": "Units"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0467,
+          "width": 0.9962,
+          "x": 0.0019,
+          "y": 0.0034
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "textAlign": "center"
+          },
+          "text": " GEC LAB TODAY\u0027S CONSUMPTION"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EquipmentSchedule"
+        },
+        "position": {
+          "height": 0.2378,
+          "width": 0.9948,
+          "x": 0.0013,
+          "y": 0.7601
+        },
+        "propConfig": {
+          "props.dateRange.endDate": {
+            "binding": {
+              "config": {
+                "expression": "addDays(now(),5)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.dateRange.startDate": {
+            "binding": {
+              "config": {
+                "expression": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\tcal \u003d Calendar.getInstance()\n\tcal.set(Calendar.HOUR_OF_DAY,6)\n\tcal.set(Calendar.MINUTE,0)\n\tcal.set(Calendar.SECOND,0)\n\tcal.set(Calendar.MILLISECOND,0)\n\treturn cal.getTime()",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.downtimeEvents": {
+            "binding": {
+              "config": {
+                "expression": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\t\n\tcal \u003d Calendar.getInstance()\n\tcal.set(Calendar.HOUR_OF_DAY, 19)\n\tcal.set(Calendar.MINUTE, 30)\n\tcal.set(Calendar.SECOND, 0)\n\tcal.set(Calendar.MILLISECOND, 0)\n\t\n\tstart \u003d cal.getTime()\n\t\n\tcal.add(Calendar.HOUR_OF_DAY, 13)\n\tend \u003d cal.getTime()\n\t\n\tcal.add(Calendar.HOUR_OF_DAY, -37)\n\tstart1 \u003d cal.getTime()\n\t\n\tcal.add(Calendar.HOUR_OF_DAY, 13)\n\tend1 \u003d cal.getTime()\n\t\n\treturn [\n\t    {\"itemId\": 1, \"startDate\": start, \"endDate\": end},\n\t    {\"itemId\": 2, \"startDate\": start, \"endDate\": end},\n\t    {\"itemId\": 3, \"startDate\": start, \"endDate\": end},\n\t    {\"itemId\": 1, \"startDate\": start1, \"endDate\": end1},\n\t    {\"itemId\": 2, \"startDate\": start1, \"endDate\": end1},\n\t    {\"itemId\": 3, \"startDate\": start1, \"endDate\": end1}\n\t]",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.items": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "SchedulerNames",
+                "returnFormat": "json"
+              },
+              "type": "query"
+            }
+          },
+          "props.scheduledEvents": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "join1-EmpReq",
+                "returnFormat": "json"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "addEnabled": false,
+          "dateRange": {},
+          "moveEnabled": false,
+          "progressBar": {
+            "enabled": false
+          },
+          "resizeEnabled": false,
+          "rowHeight": 25,
+          "style": {
+            "fontFamily": "Roboto",
+            "fontSize": 10
+          }
+        },
+        "type": "ia.display.equipmentschedule"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "iPHuGrwC",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewPath": "Timepopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "TimeSeriesChart"
+        },
+        "position": {
+          "height": 0.1444,
+          "width": 0.9973,
+          "x": -0.0005,
+          "y": 0.4721
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "Consumption (1)"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "grid": {
+                    "color": "",
+                    "dashArray": 0,
+                    "opacity": 0.9,
+                    "style": {
+                      "classes": ""
+                    },
+                    "visible": false
+                  },
+                  "label": {
+                    "font": {
+                      "color": "#00ACAC",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "Units",
+                    "visible": true
+                  },
+                  "max": 320,
+                  "min": 0,
+                  "name": "W/hr",
+                  "style": {
+                    "classes": ""
+                  },
+                  "tick": {
+                    "color": "#00ACAC",
+                    "count": 3,
+                    "label": {
+                      "font": {
+                        "color": "#00ACAC",
+                        "size": 12
+                      },
+                      "format": "Auto",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 60
+                }
+              ],
+              "markers": [],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "W/hr",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#FF8C00",
+                      "key": "EnergyConsumed",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 3
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Consumption",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Consumption"
+            }
+          ],
+          "style": {
+            "borderStyle": "double"
+          },
+          "timeAxis": {
+            "tick": {
+              "color": "#00ACAC",
+              "label": {
+                "font": {
+                  "color": "#00ACAC",
+                  "size": 14
+                },
+                "format": "YYYY-M-D"
+              }
+            },
+            "tickCount": 3
+          },
+          "timeRange": {
+            "visible": false
+          }
+        },
+        "type": "ia.chart.timeseries"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": true,
+                "id": "kGyP8C70",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": true,
+                "type": "open",
+                "viewPath": "WaterTimePopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "TimeSeriesChart_0"
+        },
+        "position": {
+          "height": 0.1422,
+          "width": 0.9945,
+          "x": -0.0001,
+          "y": 0.6165
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "Consumption (1)"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "plots": [
+            {
+              "axes": [
+                {
+                  "alignment": "left",
+                  "grid": {
+                    "color": "",
+                    "dashArray": 0,
+                    "opacity": 0.9,
+                    "style": {
+                      "classes": ""
+                    },
+                    "visible": false
+                  },
+                  "label": {
+                    "font": {
+                      "color": "#00ACAC",
+                      "size": 14
+                    },
+                    "offset": 0,
+                    "style": {
+                      "classes": ""
+                    },
+                    "text": "KLTR",
+                    "visible": true
+                  },
+                  "max": 2.5,
+                  "min": 0,
+                  "name": "KLtr",
+                  "style": {
+                    "classes": ""
+                  },
+                  "tick": {
+                    "color": "#00ACAC",
+                    "count": 3,
+                    "label": {
+                      "font": {
+                        "color": "#00ACAC",
+                        "size": 14
+                      },
+                      "format": "Auto",
+                      "style": {
+                        "classes": ""
+                      }
+                    },
+                    "style": {
+                      "classes": ""
+                    }
+                  },
+                  "width": 60
+                }
+              ],
+              "markers": [],
+              "relativeWeight": 1,
+              "trends": [
+                {
+                  "axis": "KLtr",
+                  "baselines": [],
+                  "breakLine": true,
+                  "columns": [
+                    {
+                      "color": "#0000FF",
+                      "key": "WaterConsumed",
+                      "styles": {
+                        "highlighted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "muted": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        },
+                        "normal": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": 3
+                          }
+                        },
+                        "selected": {
+                          "fill": {
+                            "color": "",
+                            "opacity": null
+                          },
+                          "stroke": {
+                            "color": "",
+                            "dashArray": null,
+                            "opacity": null,
+                            "width": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interpolation": "curveLinear",
+                  "radius": 2,
+                  "series": "Consumption",
+                  "stack": true,
+                  "type": "line",
+                  "visible": true
+                }
+              ]
+            }
+          ],
+          "series": [
+            {
+              "name": "Consumption"
+            }
+          ],
+          "style": {
+            "borderStyle": "double"
+          },
+          "timeAxis": {
+            "tick": {
+              "color": "#00ACAC",
+              "label": {
+                "font": {
+                  "color": "#00ACAC",
+                  "size": 14
+                },
+                "format": "YYYY-M-D"
+              }
+            },
+            "tickCount": 3
+          },
+          "timeRange": {
+            "visible": false
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

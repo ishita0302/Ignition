@@ -1,0 +1,572 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.7533,
+          "width": 1,
+          "y": 0.1133
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "{../StartDate_0.props.value}",
+                  "StartDate": "{../StartDate.props.value}"
+                },
+                "queryPath": "DailyConsumptionTable"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "DD/MM/YYYY",
+              "editable": false,
+              "field": "ConsumptionDate",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Date"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "WaterConsumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Water (KL)"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "",
+                "color": "#FF8C00"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "EnergyConsumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Energy (Units)"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": "",
+                "color": "#FF8C00"
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "activeOption": 5
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.175,
+          "x": 0.5594,
+          "y": 0.0108
+        },
+        "props": {
+          "text": "End Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "StartDate"
+        },
+        "position": {
+          "height": 0.0865,
+          "width": 0.2275,
+          "x": 0.2312,
+          "y": 0.0108
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\tfrom java.text import SimpleDateFormat\n\n#\t# Parse the input date string\n#\tdate_format \u003d SimpleDateFormat(\"yyyy-MM-dd\")\n#\tparsed_date \u003d date_format.parse(value)\n\n#\t# Create a calendar instance and set it to the parsed date\n\tcal \u003d Calendar.getInstance()\n#\tcal.setTime(parsed_date)\n\n\t# Extract the month from the parsed date\n\tmonth \u003d cal.get(Calendar.MONTH)\n\t\n\n\t# Set the calendar to the extracted month and reset time fields\n\tcal.set(Calendar.MONTH, month)\n\tcal.set(Calendar.DATE,1)\n\tcal.set(Calendar.HOUR_OF_DAY, 0)\n\tcal.set(Calendar.MINUTE, 0)\n\tcal.set(Calendar.SECOND, 0)\n\tcal.set(Calendar.MILLISECOND, 0)\n\n\treturn cal.getTime()",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "DD-MM-YY",
+          "formattedValue": "01-09-25",
+          "pickerType": "date"
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.21,
+          "x": 0.021,
+          "y": 0.0108
+        },
+        "props": {
+          "text": "Start Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "StartDate_0"
+        },
+        "position": {
+          "height": 0.0865,
+          "width": 0.2275,
+          "x": 0.7437,
+          "y": 0.0141
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "DD-MM-YY",
+          "formattedValue": "08-09-25",
+          "pickerType": "date"
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.125,
+          "x": 0.401,
+          "y": 0.8773
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "{../StartDate_0.props.value}",
+                  "StartDate": "{../StartDate.props.value}"
+                },
+                "queryPath": "DailyConsumptionTable"
+              },
+              "transforms": [
+                {
+                  "code": "\t# Convert Dataset to a Python list of lists\n\tpyData \u003dsystem.dataset.toPyDataSet(value)\n\n\t# Sum the second column (index 1)\n\tcolumn_sum \u003d sum(row[1] for row in pyData)\n\treturn round(column_sum,2)\n",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00",
+            "fontSize": 22,
+            "textAlign": "right"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.2425,
+          "x": 0.6435,
+          "y": 0.8773
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "{../StartDate_0.props.value}",
+                  "StartDate": "{../StartDate.props.value}"
+                },
+                "queryPath": "DailyConsumptionTable"
+              },
+              "transforms": [
+                {
+                  "code": "\t# Convert Dataset to a Python list of lists\n\tpyData \u003dsystem.dataset.toPyDataSet(value)\n\n\t# Sum the second column (index 1)\n\tcolumn_sum \u003d sum(row[2] for row in pyData)\n\treturn round(column_sum,2)\n",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00",
+            "fontSize": 22,
+            "textAlign": "right"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.0975,
+          "x": 0.8944,
+          "y": 0.8773
+        },
+        "props": {
+          "text": "KWH"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.0975,
+          "x": 0.5519,
+          "y": 0.8773
+        },
+        "props": {
+          "text": "KL"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0865,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.2275,
+          "x": 0.0194,
+          "y": 0.8773
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "text": "TOTAL"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.41,
+      "y": -0.07
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

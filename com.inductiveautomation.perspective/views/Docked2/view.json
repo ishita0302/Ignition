@@ -1,0 +1,212 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 35,
+      "width": 500
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Welcome",
+          "tooltip": {
+            "style": {
+              "backgroundColor": "#FFAC47"
+            }
+          }
+        },
+        "position": {
+          "height": 0.625,
+          "width": 0.5752,
+          "x": 0.1492,
+          "y": 0.1515
+        },
+        "props": {
+          "style": {
+            "fontFamily": "Merriweather",
+            "fontSize": 27,
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "WELCOME TO GEC LAB"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {},
+              "scope": "C",
+              "type": "logout"
+            }
+          }
+        },
+        "meta": {
+          "name": "Logout"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.0711,
+          "x": 0.9058,
+          "y": 0.6373
+        },
+        "props": {
+          "image": {
+            "height": 10
+          },
+          "style": {
+            "fontSize": 15
+          },
+          "text": "Logout",
+          "textStyle": {
+            "fontSize": 10
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Role"
+        },
+        "position": {
+          "height": 0.1467,
+          "width": 0.09,
+          "x": 0.9068,
+          "y": 0.3976
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "session.props.auth.user.roles[0]"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": 10
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Username",
+          "tooltip": {
+            "location": "top-right"
+          }
+        },
+        "position": {
+          "height": 0.2933,
+          "width": 0.0832,
+          "x": 0.9068,
+          "y": 0.029
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "session.props.auth.user.userName"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": 11
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 0.6364,
+          "width": 0.1402,
+          "x": 0.7467,
+          "y": 0.156
+        },
+        "propConfig": {
+          "props.value": {
+            "onChange": {
+              "enabled": null,
+              "script": "\tself.session.props.theme \u003d currentValue"
+            }
+          }
+        },
+        "props": {
+          "options": [
+            {
+              "label": "Light",
+              "value": "light"
+            },
+            {
+              "label": "Light Cool",
+              "value": "light-cool"
+            },
+            {
+              "label": "Light Warm",
+              "value": "light-warm"
+            },
+            {
+              "label": "Dark",
+              "value": "dark"
+            },
+            {
+              "label": "Dark Cool",
+              "value": "dark-cool"
+            },
+            {
+              "label": "Dark Warm",
+              "value": "dark-warm"
+            }
+          ],
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          },
+          "value": "dark"
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "pentair-vector-logo"
+        },
+        "position": {
+          "height": 1.0171,
+          "width": 0.1349,
+          "y": -0.0308
+        },
+        "props": {
+          "fit": {
+            "mode": "percent"
+          },
+          "source": "/system/images/pentair-vector-logo.png"
+        },
+        "type": "ia.display.image"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderStyle": "double"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

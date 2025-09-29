@@ -1,0 +1,40 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "0a7f6d3e710b7fa1874a39de5c2ed77052c1e276d431c665def3b58652885374",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin_IoT_Lab",
+      "timestamp": "2025-09-11T11:17:14Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "selectedYear",
+        "sqlType": 2
+      }
+    ]
+  }
+}

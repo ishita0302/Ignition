@@ -1,0 +1,1037 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1164
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Department"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.0945,
+          "x": 0.2188,
+          "y": 0.1204
+        },
+        "props": {
+          "text": "Department"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown_0"
+        },
+        "position": {
+          "height": 0.0393,
+          "width": 0.116,
+          "x": 0.22,
+          "y": 0.176
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "DropdownQuery"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "value": null
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "startDate"
+        },
+        "position": {
+          "height": 0.04,
+          "rotate": {
+            "anchor": "38% 262%"
+          },
+          "width": 0.1186,
+          "x": 0.3511,
+          "y": 0.1204
+        },
+        "props": {
+          "text": "Start Date Time"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.2251,
+          "x": 0.0558,
+          "y": 0.0711
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Add break schedule..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.3419,
+          "x": 0.0584,
+          "y": 0.3133
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Select department name for viewing all its break schedules..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SDTPicker"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.1538,
+          "x": 0.352,
+          "y": 0.1749
+        },
+        "props": {
+          "formattedValue": null,
+          "inputProps": {
+            "style": {
+              "textAlign": "start"
+            }
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "endDate"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.11,
+          "x": 0.5332,
+          "y": 0.1204
+        },
+        "props": {
+          "text": "End Date Time"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0533,
+          "width": 0.0842,
+          "x": 0.4296,
+          "y": 0.3066
+        },
+        "props": {
+          "text": "Department"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EDTPicker"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.1512,
+          "x": 0.5348,
+          "y": 0.1726
+        },
+        "props": {
+          "formattedValue": null,
+          "inputProps": {
+            "style": {
+              "textAlign": "start"
+            }
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 0.0393,
+          "width": 0.0942,
+          "x": 0.5199,
+          "y": 0.3125
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "DropdownQuery"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "value": null
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "descr"
+        },
+        "position": {
+          "height": 0.04,
+          "rotate": {
+            "anchor": "-128% 350%"
+          },
+          "width": 0.061,
+          "x": 0.7104,
+          "y": 0.1204
+        },
+        "props": {
+          "text": "Task"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TopicText"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.1418,
+          "x": 0.7098,
+          "y": 0.1711
+        },
+        "props": {
+          "placeholder": "Task"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "#\tself.getSibling(\"ReqTable\").refreshBinding(\"props.data\")\n\tself.getSibling(\"Table\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "#\tnamedQuery \u003d \"Procedure1\"\n#\tparameters \u003d {\"Name\":self.getSibling(\"Dropdown\").props.value, \"SDateTime\":self.getSibling(\"SDTPicker\").props.value, \"EDateTime\" :self.getSibling(\"EDTPicker\").props.value, \"Topic\" :self.getSibling(\"TopicText\").props.text}\n#\tsystem.db.runNamedQuery(namedQuery, parameters)\n\tparameters \u003d {\"Requester\" :self.getSibling(\"RequesterInput\").props.text, \"Department\":self.getSibling(\"Dropdown_0\").props.value, \"startDate\":self.getSibling(\"SDTPicker\").props.value, \"endDate\" :self.getSibling(\"EDTPicker\").props.value, \"descr\" :self.getSibling(\"TopicText\").props.text}\n \tresult \u003d system.db.runNamedQuery(\"Betweenfunc1\", parameters)\n \tresult1 \u003d result[0]\n \tvalue \u003d result1[\"C\"]\n# \tif ((self.getSibling(\"Dropdown\").props.value \u003d\u003d \"null\") or (self.getSibling(\"SDTPicker\").props.value \u003d\u003d \"null\") or (self.getSibling(\"EDTPicker\").props.value \u003d\u003d \"null\") or (self.getSibling(\"TopicText\").props.text is None)):\n# \t\tsystem.perspective.openPopup(\"myID3\", \u0027checkpopup\u0027)\n \tif value \u003d\u003d 0:\n\t\tnq \u003d \"INSERT INTO Breaks (Requester,Department,startDate,endDate,descr) VALUES (?,?,?,?,?)\"\n \t\targs \u003d [self.getSibling(\"RequesterInput\").props.text,self.getSibling(\"Dropdown_0\").props.value, self.getSibling(\"SDTPicker\").props.value, self.getSibling(\"EDTPicker\").props.value, self.getSibling(\"TopicText\").props.text]\n \t\tsystem.db.runPrepUpdate(nq, args)\n \t\tsystem.perspective.openPopup(\"myID6\", \u0027BreakApprove\u0027)\n \telse:\n \t\tsystem.perspective.openPopup(\"myID2\", \u0027Fail popup\u0027)\n \t\t\n# \t\tnq \u003d \"INSERT INTO Request (Name,SDateTime,EDateTime,Topic) VALUES (?,?,?,?)\"\n# \t\targs \u003d {\"Name\":self.getSibling(\"Dropdown\").props.value, \"SDateTime\":self.getSibling(\"SDTPicker\").props.value, \"EDateTime\" :self.getSibling(\"EDTPicker\").props.value, \"Topic\" :self.getSibling(\"TopicText\").props.text}\n# \t\tsystem.db.runPrepUpdate(nq, args)\n# \t\t\"UPDATE ReqTable SET Name \u003d ?, SDateTime \u003d ?, EDateTime \u003d ?, Topic \u003d ?\n# \t\t[self.getSibling(\"Dropdown\").props.value, self.parent.parent.getChild(\"FlexContainer_0\").\n\n# \t\tparam \u003d {\"Topic\" :self.getSibling(\"TopicText\").props.text, \"SDateTime\":self.getSibling(\"SDTPicker\").props.value, \"EDateTime\" :self.getSibling(\"EDTPicker\").props.value, \"Name\":self.getSibling(\"Dropdown\").props.value}\n# \t\tsystem.db.runNamedQuery(\"ReqInsert\", param)\n# \t\tsystem.gui.messageBox(\"Row Successfully inserted.\")"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Request_0"
+        },
+        "position": {
+          "height": 0.0633,
+          "width": 0.0679,
+          "x": 0.8634,
+          "y": 0.1484
+        },
+        "props": {
+          "text": "Add"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.4967,
+          "width": 0.8849,
+          "x": 0.0534,
+          "y": 0.3751
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "Department": "{../Dropdown.props.value}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "BreakTable"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ID",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "right",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "ascending",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Department",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
+              "editable": false,
+              "field": "startDate",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Job Start Time"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "ascending",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
+              "editable": false,
+              "field": "endDate",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Job End Time"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "ascending",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "descr",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Time",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Time(in Min)"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Requester",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "activeOption": 5,
+            "bottom": false
+          },
+          "selection": {
+            "enableColumnSelection": true
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Requester"
+        },
+        "position": {
+          "height": 0.0533,
+          "width": 0.0799,
+          "x": 0.0636,
+          "y": 0.1185
+        },
+        "props": {
+          "text": "Requester"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "RequesterInput"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.1246,
+          "x": 0.0624,
+          "y": 0.18
+        },
+        "props": {
+          "placeholder": "Name"
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tparameters \u003d {\"Id\" :self.getSibling(\"ID\").props.text}\n \tsystem.db.runNamedQuery(\"Check1\", parameters)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.0567,
+          "width": 0.0687,
+          "x": 0.1203,
+          "y": 0.25
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "ID"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.1246,
+          "x": 0.2059,
+          "y": 0.255
+        },
+        "props": {
+          "placeholder": "ID",
+          "text": "67"
+        },
+        "type": "ia.input.text-field"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

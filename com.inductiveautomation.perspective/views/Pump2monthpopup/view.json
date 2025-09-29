@@ -1,0 +1,448 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.6747,
+          "width": 0.9693,
+          "x": 0.0146,
+          "y": 0.3143
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "selectedYear": "{../Dropdown.props.value}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "Pump2monthpopup"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Month",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Consumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Consumed (Units)"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "bottom": false
+          },
+          "selection": {
+            "enableRowSelection": false
+          },
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderStyle": "solid",
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid",
+            "paddingLeft": 2,
+            "paddingRight": 2,
+            "paddingTop": 2
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.3878,
+          "x": 0.0257,
+          "y": 0.1982
+        },
+        "props": {
+          "text": "Total Consumption"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.2474,
+          "x": 0.465,
+          "y": 0.1968
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "selectedYear": "{../Dropdown.props.value}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "YearWisePump2"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0],2) # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1276,
+          "x": 0.6571,
+          "y": 0.192
+        },
+        "props": {
+          "text": "Units"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 0.0712,
+          "width": 0.3282,
+          "x": 0.3365,
+          "y": 0.1119
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "dateExtract(now(), \"year\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "options": [
+            {
+              "label": 2025,
+              "value": 2025
+            },
+            {
+              "label": 2026,
+              "value": 2026
+            }
+          ],
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0847,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.2498,
+          "x": 0.0232,
+          "y": 0.101
+        },
+        "props": {
+          "text": "Select year"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.0812,
+          "width": 0.0693,
+          "x": 0.9032,
+          "y": 0.0221
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0847,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.4847,
+          "x": 0.0184,
+          "y": 0.0061
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          },
+          "text": "PUMP 2 Consumption"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderStyle": "solid",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,3 @@
+SELECT DateTime, Pow_Ana_SinglePhase1_Voltage, Pow_Ana_SinglePhase1_Current, Pow_Ana_SinglePhase1_Power_Factor, Pow_Ana_SinglePhase1_Frequency
+FROM SINGLEPHASEANALYSER
+WHERE DateTime Between :StartDate and :EndDate

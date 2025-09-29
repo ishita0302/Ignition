@@ -1,0 +1,116 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.16,
+          "width": 0.815,
+          "x": 0.115,
+          "y": 0.42
+        },
+        "props": {
+          "text": "Click OK to approve."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tnamedQuery \u003d \"ApproveQuery\"\n\tsystem.db.runNamedQuery(namedQuery)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "params": {},
+                  "view": "Admin breakpoint"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\"A2TQ4yW6\")"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "OK"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.215,
+          "x": 0.375,
+          "y": 0.585
+        },
+        "props": {
+          "text": "OK"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027A2TQ4yW6\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.11,
+          "width": 0.155,
+          "x": 0.8327,
+          "y": 0.0205
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,1 @@
+SELECT Department FROM Department

@@ -1,0 +1,7 @@
+SELECT
+    DATENAME(MONTH, DateTime) AS [Month],
+    SUM(ENERGY_CONSUMED) AS [Consumed]
+FROM CONSUMPTION
+WHERE YEAR(DateTime) = :selectedYear AND CAST([DateTime] AS TIME) = '00:00:00'
+GROUP BY DATENAME(MONTH, DateTime), MONTH(DateTime)
+ORDER BY MONTH(DateTime);

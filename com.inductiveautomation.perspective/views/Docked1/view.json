@@ -1,0 +1,1026 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 400,
+      "width": 202
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px",
+              "shrink": 0
+            },
+            "props": {
+              "path": "material/dashboard"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "92px"
+            },
+            "props": {
+              "text": "Dashboard",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "breakpoint view"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FlexContainer_0"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.0057
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/live_tv"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "84px"
+            },
+            "props": {
+              "text": "Live Data",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "LivePage"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FlexContainer_1"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.0678
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/supervised_user_circle"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "User",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "User breakpoint"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FlexContainer_2"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.1903
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/admin_panel_settings"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "Admin",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "Admin breakpoint"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FlexContainer_3"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.2504
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/assignment"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "ConsumptionReport",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "Report"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "contextMenu": {
+            "enabled": true,
+            "items": [
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report1"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Scheduling",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Consumption",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report2"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "PA",
+                "type": "link"
+              }
+            ]
+          },
+          "name": "FlexContainer_5",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "x": -0.0003,
+          "y": 0.1296
+        },
+        "props": {
+          "alignContent": "space-between",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/analytics"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "86px"
+            },
+            "props": {
+              "text": "PhaseAnalyzer",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "PhaseAnalyserNew"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "FlexContainer_4"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.3704
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/assignment"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "SchedulingReport",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "Report1"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "contextMenu": {
+            "enabled": true,
+            "items": [
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report1"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Scheduling",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Consumption",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report2"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "PA",
+                "type": "link"
+              }
+            ]
+          },
+          "name": "FlexContainer_6",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.3096
+        },
+        "props": {
+          "alignContent": "space-between",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/assignment"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "PAReport",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "Report2"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "contextMenu": {
+            "enabled": true,
+            "items": [
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report1"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Scheduling",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Consumption",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report2"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "PA",
+                "type": "link"
+              }
+            ]
+          },
+          "name": "FlexContainer_7",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.4321
+        },
+        "props": {
+          "alignContent": "space-between",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Icon"
+            },
+            "position": {
+              "basis": "20px"
+            },
+            "props": {
+              "path": "material/assignment"
+            },
+            "type": "ia.display.icon"
+          },
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "text": "IterationReport",
+              "textStyle": {
+                "fontSize": 12,
+                "fontWeight": "bold"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "params": {},
+                  "view": "Report3"
+                },
+                "scope": "C",
+                "type": "nav"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027\u0027)\n\tsystem.perspective.closePopup(\u0027a3yEddjW\u0027)\n\tsystem.perspective.closePopup(\u0027iPHuGrwC\u0027)\n\tsystem.perspective.closePopup(\u0027kGyP8C70\u0027)\n\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)\n\tsystem.perspective.closePopup(\u0027pp685a9O\u0027)\n\tsystem.perspective.closePopup(\u00278NpPttpe\u0027)\n\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)\n\tsystem.perspective.closePopup(\u0027ch8b5XrH\u0027)\n\tsystem.perspective.closePopup(\u0027DZ1E2A4e\u0027)\n\tsystem.perspective.closePopup(\u0027tmkqCIFt\u0027)\n\tsystem.perspective.closePopup(\u0027MFqwIMMD\u0027)\n\tsystem.perspective.closePopup(\u0027SjceFYYk\u0027)\n\tsystem.perspective.closePopup(\u0027QVyX8PyT\u0027)\n\tsystem.perspective.closePopup(\u00276SYbluf8\u0027)\n\tsystem.perspective.closePopup(\u00273x_bLzxY\u0027)\n\tsystem.perspective.closePopup(\u0027RYprnCNV\u0027)\n\tsystem.perspective.closePopup(\u0027GMFQOtCm\u0027)\n\tsystem.perspective.closePopup(\u0027khz_1Rz9\u0027)\n\tsystem.perspective.closePopup(\u00276ZyGZWk3\u0027)\n\tsystem.perspective.closePopup(\u0027tATYagYV\u0027)\n\tsystem.perspective.closePopup(\u00275608AA0t\u0027)\n\tsystem.perspective.closePopup(\u0027isDexEcY\u0027)\n\tsystem.perspective.closePopup(\u0027hX1FEfYp\u0027)\n\tsystem.perspective.closePopup(\u0027Ls_0FJVe\u0027)\n\tsystem.perspective.closePopup(\u002767KBZxhU\u0027)\n\tsystem.perspective.closePopup(\u0027aNBZLfO2\u0027)\n\tsystem.perspective.closePopup(\u002735uOx_al\u0027)\n\tsystem.perspective.closePopup(\u0027IJkzhWt-\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "contextMenu": {
+            "enabled": true,
+            "items": [
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report1"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Scheduling",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "Consumption",
+                "type": "link"
+              },
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "material/add_circle",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": "Report2"
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "PA",
+                "type": "link"
+              }
+            ]
+          },
+          "name": "FlexContainer_8",
+          "tooltip": {
+            "enabled": true
+          }
+        },
+        "position": {
+          "height": 0.06,
+          "width": 1,
+          "y": 0.4921
+        },
+        "props": {
+          "alignContent": "space-between",
+          "alignItems": "center",
+          "style": {
+            "borderBottomRightRadius": 10,
+            "borderStyle": "outset",
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

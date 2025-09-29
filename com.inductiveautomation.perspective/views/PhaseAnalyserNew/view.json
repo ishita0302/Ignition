@@ -1,0 +1,1339 @@
+{
+  "custom": {
+    "showGraph": false
+  },
+  "params": {},
+  "propConfig": {
+    "custom.showGraph": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 660,
+      "width": 1164
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.06,
+          "width": 0.9992,
+          "y": 0.3573
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": "10px",
+            "borderBottomRightRadius": "10px",
+            "borderStyle": "solid",
+            "borderTopLeftRadius": "10px",
+            "borderTopRightRadius": "10px",
+            "textAlign": "left",
+            "textIndent": 20,
+            "whiteSpace": "normal"
+          },
+          "text": "All cosolidated Data (Single Phase Analyser, Three Phase Analyzer, Meghdoot)"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0455,
+          "width": 0.9992,
+          "y": 0.0003
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": "10px",
+            "borderBottomRightRadius": "10px",
+            "borderStyle": "solid",
+            "borderTopLeftRadius": "10px",
+            "borderTopRightRadius": "10px",
+            "textAlign": "center",
+            "whiteSpace": "normal"
+          },
+          "text": "Live Data"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "ToggleSwitch"
+        },
+        "position": {
+          "height": 0.0606,
+          "width": 0.1856,
+          "x": 0.7958,
+          "y": 0.3519
+        },
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.showGraph"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "label": {
+            "style": {
+              "color": "#47FF47"
+            },
+            "text": "Show Graph View"
+          }
+        },
+        "type": "ia.input.toggle-switch"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": 0.5788,
+          "width": 1,
+          "x": -0.0008,
+          "y": 0.4152
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "config": {
+                "expression": "if({view.custom.showGraph}, \"GraphView\", \"TableView\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0424,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.05
+        },
+        "props": {
+          "style": {
+            "borderStyle": "double",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Single Phase Analyser",
+          "textStyle": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0424,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.05
+        },
+        "props": {
+          "style": {
+            "borderStyle": "double",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Three Phase Analyser",
+          "textStyle": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0424,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.05
+        },
+        "props": {
+          "style": {
+            "borderStyle": "double",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "text": "Meghdoot",
+          "textStyle": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.0956
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Voltage (V)"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.1301
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Current (A)"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.1646
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "KVA"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.1991
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "KW"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.2336
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Power Factor"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.2681
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Total KW"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_10"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.0009,
+          "y": 0.3041
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Frequency"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.3041
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "fI1"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_12"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.2681
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "fU1"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_13"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.2336
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "S"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.1991
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "P"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.1646
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Lambda"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_16"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.1301
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Irms"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_17"
+        },
+        "position": {
+          "height": 0.0364,
+          "width": 0.33,
+          "x": 0.3357,
+          "y": 0.0956
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Urms"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_18"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.2756
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 7"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_19"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.2456
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 6"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_20"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.2156
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 5"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_21"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.1856
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 4"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_22"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.1556
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 3"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_23"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.3299,
+          "x": 0.6687,
+          "y": 0.1256
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 2"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_24"
+        },
+        "position": {
+          "height": 0.032,
+          "width": 0.3299,
+          "x": 0.6687,
+          "y": 0.0956
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 1"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_25"
+        },
+        "position": {
+          "height": 0.034,
+          "width": 0.33,
+          "x": 0.6687,
+          "y": 0.3056
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 14,
+            "paddingLeft": 5
+          },
+          "text": "Sensor 8"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_26"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.1004
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseVoltage},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_27"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.1349
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseCurrent},3),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_28"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.1694
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseKVA},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_29"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.2039
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseKW},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_30"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.2384
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhasePF},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_31"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.2729
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseTotalKW},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_32"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.0919,
+          "x": 0.2259,
+          "y": 0.3089
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]SinglePhaseAnalyzer/SinglePhaseFrequency},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_33"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.1263,
+          "x": 0.5254,
+          "y": 0.1004
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/UrmsΣ},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_34"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.1246,
+          "x": 0.5271,
+          "y": 0.1349
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/IrmsΣ},3),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_35"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.1357,
+          "x": 0.516,
+          "y": 0.1694
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/LambdaΣ}, 2), 0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_36"
+        },
+        "position": {
+          "height": 0.0242,
+          "width": 0.1306,
+          "x": 0.5211,
+          "y": 0.2051
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/PΣ},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_37"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.1117,
+          "x": 0.5389,
+          "y": 0.2382
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/SΣ},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_38"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.1314,
+          "x": 0.5203,
+          "y": 0.2729
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/fU1},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_39"
+        },
+        "position": {
+          "height": 0.0273,
+          "width": 0.134,
+          "x": 0.5177,
+          "y": 0.3089
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "try(round({[default]ThreePhaseAnalyzer/fI1},2),0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_40"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.1004
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor1"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_41"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.1304
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor2"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_42"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.1604
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor3"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_43"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.1904
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor4"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_44"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.2219
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor5"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_45"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.2519
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor6"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_46"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.2804
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor7"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_47"
+        },
+        "position": {
+          "height": 0.0212,
+          "width": 0.0919,
+          "x": 0.8937,
+          "y": 0.3119
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]Meghdoot/Sensor8"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 18
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.067,
+      "y": 0.0061
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

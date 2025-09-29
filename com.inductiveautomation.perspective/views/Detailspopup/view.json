@@ -1,0 +1,417 @@
+{
+  "custom": {
+    "eventId": "value"
+  },
+  "params": {
+    "endDate": "value",
+    "eventId": "",
+    "label": "value",
+    "startDate": "value"
+  },
+  "propConfig": {
+    "custom.eventId": {
+      "persistent": true
+    },
+    "params.endDate": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.eventId": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.label": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.startDate": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 528
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.165,
+          "width": 0.375,
+          "x": 0.0175,
+          "y": 0.3041
+        },
+        "props": {
+          "text": "Project Description:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.155,
+          "width": 0.33,
+          "x": 0.0175,
+          "y": 0.4495
+        },
+        "props": {
+          "text": "Start Date Time:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.165,
+          "width": 0.3,
+          "x": 0.015,
+          "y": 0.1545
+        },
+        "props": {
+          "text": "Project Owner:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027G3eFSwO3\u0027)\n\tsystem.perspective.closePopup(\u0027Hh-0yz7W\u0027)\n\tsystem.perspective.closePopup(\u0027z7DJdC0Q\u0027)\n\tsystem.perspective.closePopup(\u0027X5MD71mC\u0027)\n\tsystem.perspective.closePopup(\u0027yiKlMo63\u0027)\n\tsystem.perspective.closePopup(\u00278gZbeMbI\u0027)\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.1545,
+          "width": 0.075,
+          "x": 0.9127,
+          "y": 0.0205
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Desc"
+        },
+        "position": {
+          "height": 0.125,
+          "width": 0.6515,
+          "x": 0.3172,
+          "y": 0.3154
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetPD"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return pyData[0][0]  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SDT"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.4735,
+          "x": 0.3172,
+          "y": 0.4797
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetSDT"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.text import SimpleDateFormat\n\t\n\tpyData \u003d system.dataset.toPyDataSet(value)\n\t\n\tif pyData and len(pyData) \u003e 0:\n\t    raw_date \u003d pyData[0][0]  # First row, first column\n\t    if raw_date:\n\t        sdf \u003d SimpleDateFormat(\"MM/dd/yy HH:mm\")\n\t        formatted_date \u003d sdf.format(raw_date)\n\t        return formatted_date\n\t    else:\n\t        return \"N/A\"\n\telse:\n\t    return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EDT"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.4848,
+          "x": 0.3172,
+          "y": 0.6341
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetEDT"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.text import SimpleDateFormat\n\t\n\tpyData \u003d system.dataset.toPyDataSet(value)\n\t\n\tif pyData and len(pyData) \u003e 0:\n\t    raw_date \u003d pyData[0][0]  # First row, first column\n\t    if raw_date:\n\t        sdf \u003d SimpleDateFormat(\"MM/dd/yy HH:mm\")\n\t        formatted_date \u003d sdf.format(raw_date)\n\t        return formatted_date\n\t    else:\n\t        return \"N/A\"\n\telse:\n\t    return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.165,
+          "width": 0.2325,
+          "x": 0.0175,
+          "y": 0.0196
+        },
+        "props": {
+          "text": "Event Id:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.155,
+          "width": 0.2925,
+          "x": 0.0175,
+          "y": 0.5945
+        },
+        "props": {
+          "text": "End Date Time:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.155,
+          "width": 0.2925,
+          "x": 0.0175,
+          "y": 0.7395
+        },
+        "props": {
+          "text": "Resource:"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Id"
+        },
+        "position": {
+          "height": 0.125,
+          "width": 0.3825,
+          "x": 0.3172,
+          "y": 0.0354
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetRID"
+              },
+              "transforms": [
+                {
+                  "code": "\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return pyData[0][0]  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "own"
+        },
+        "position": {
+          "height": 0.125,
+          "width": 0.5265,
+          "x": 0.3172,
+          "y": 0.1704
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetPO"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return pyData[0][0]  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "EDT_0"
+        },
+        "position": {
+          "height": 0.1,
+          "width": 0.4318,
+          "x": 0.3229,
+          "y": 0.7691
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "eventId": "{view.params.eventId}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "GetDep",
+                "returnFormat": "dataset"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return pyData[0][0]  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

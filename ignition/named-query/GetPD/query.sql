@@ -1,0 +1,1 @@
+select ProjectDescription from Request WHERE RID =:eventId

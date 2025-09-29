@@ -1,0 +1,1 @@
+select RID, ProjectOwner, ProjectDescription, Department, SDateTime, EDateTime from Request WHERE RID =:eventId

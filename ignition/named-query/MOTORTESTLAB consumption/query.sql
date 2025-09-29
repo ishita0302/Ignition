@@ -1,0 +1,2 @@
+SELECT
+  SUM(TRY_CAST([MOTOR TEST POWER(W)] AS FLOAT)) AS Motortestlab FROM MOTORTESTLAB WHERE DateTime between :StartDate and :EndDate

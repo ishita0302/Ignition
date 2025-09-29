@@ -1,0 +1,17 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "view.json",
+    "thumbnail.png"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "admin_IoT_Lab",
+      "timestamp": "2025-09-25T09:08:38Z"
+    },
+    "lastModificationSignature": "0bb3849af750f1e96b1cb573b52fcd80153ea80245cdd192e15569098c0614a9"
+  }
+}

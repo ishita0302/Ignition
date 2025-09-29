@@ -1,0 +1,1 @@
+SELECT ID AS id, Department AS label FROM Department

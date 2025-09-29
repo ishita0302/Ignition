@@ -1,0 +1,261 @@
+{
+  "pages": {
+    "/": {
+      "title": "",
+      "viewPath": "FirstPage"
+    },
+    "/1papopup": {
+      "viewPath": "1PApopup"
+    },
+    "/3papopup": {
+      "viewPath": "3PApopup"
+    },
+    "/addnew": {
+      "viewPath": "Addnew"
+    },
+    "/admin": {
+      "title": "",
+      "viewPath": "Admin"
+    },
+    "/admin-breakpoint": {
+      "viewPath": "Admin breakpoint"
+    },
+    "/admin-small": {
+      "viewPath": "Admin small"
+    },
+    "/approved": {
+      "viewPath": "Approved"
+    },
+    "/break": {
+      "title": "",
+      "viewPath": "break"
+    },
+    "/break-breakpoint": {
+      "viewPath": "break breakpoint"
+    },
+    "/breakapprove": {
+      "viewPath": "BreakApprove"
+    },
+    "/breakpoint-view": {
+      "title": "",
+      "viewPath": "breakpoint view"
+    },
+    "/breaksmall": {
+      "viewPath": "breaksmall"
+    },
+    "/carouselview1": {
+      "viewPath": "CarouselView1"
+    },
+    "/checkpopup": {
+      "viewPath": "checkpopup"
+    },
+    "/convertermonthpopup": {
+      "viewPath": "Convertermonthpopup"
+    },
+    "/deletenew": {
+      "viewPath": "Deletenew"
+    },
+    "/detailspopup": {
+      "viewPath": "Detailspopup"
+    },
+    "/docked1": {
+      "title": "",
+      "viewPath": "Docked1"
+    },
+    "/electronicsmonthpopup": {
+      "viewPath": "Electronicsmonthpopup"
+    },
+    "/energymonthpopup": {
+      "viewPath": "EnergyMonthpopup"
+    },
+    "/entrydetails": {
+      "viewPath": "EntryDetails"
+    },
+    "/exhaustmonthpopup": {
+      "viewPath": "Exhaustmonthpopup"
+    },
+    "/fail-popup": {
+      "viewPath": "Fail popup"
+    },
+    "/filtermonthpopup": {
+      "viewPath": "Filtermonthpopup"
+    },
+    "/filtrationmonthpopup": {
+      "viewPath": "Filtrationmonthpopup"
+    },
+    "/firstpage": {
+      "title": "",
+      "viewPath": "FirstPage"
+    },
+    "/firstpage-small": {
+      "docks": {
+        "top": [
+          {
+            "anchor": "fixed",
+            "autoBreakpoint": 480,
+            "content": "push",
+            "handle": "hide",
+            "iconUrl": "",
+            "id": "",
+            "modal": false,
+            "resizable": false,
+            "show": "visible",
+            "size": 150,
+            "viewParams": {},
+            "viewPath": "Docked2 (1)"
+          }
+        ]
+      },
+      "title": "",
+      "viewPath": "FirstPage small"
+    },
+    "/firstpagenew": {
+      "viewPath": "FirstPageNew"
+    },
+    "/graphview": {
+      "title": "",
+      "viewPath": "GraphView"
+    },
+    "/iotmonthpopup": {
+      "viewPath": "IOTmonthpopup"
+    },
+    "/livepage": {
+      "title": "",
+      "viewPath": "LivePage"
+    },
+    "/meghdootpopup": {
+      "viewPath": "MeghdootPopup"
+    },
+    "/microbiologymonthpopup": {
+      "viewPath": "Microbiologymonthpopup"
+    },
+    "/modifynew": {
+      "viewPath": "Modifynew"
+    },
+    "/motortestmonthpopup": {
+      "viewPath": "Motortestmonthpopup"
+    },
+    "/openareamonthpopup": {
+      "viewPath": "Openareamonthpopup"
+    },
+    "/phaseanalysernew": {
+      "viewPath": "PhaseAnalyserNew"
+    },
+    "/phaseanalyzer": {
+      "title": "",
+      "viewPath": "PhaseAnalyzer"
+    },
+    "/poolareamothpopup": {
+      "viewPath": "Poolareamothpopup"
+    },
+    "/pump1monthpopup": {
+      "viewPath": "Pump1monthpopup"
+    },
+    "/pump2monthpopup": {
+      "viewPath": "Pump2monthpopup"
+    },
+    "/pump3monthpopup": {
+      "viewPath": "Pump3monthpopup"
+    },
+    "/pump4monthpoup": {
+      "viewPath": "Pump4monthpoup"
+    },
+    "/rejectedpopup": {
+      "viewPath": "Rejectedpopup"
+    },
+    "/report33": {
+      "viewPath": "Report3"
+    },
+    "/rpdbmonthpopup": {
+      "viewPath": "RPDBmonthpopup"
+    },
+    "/schedulingflex": {
+      "viewPath": "SchedulingFlex"
+    },
+    "/schedulingpopup": {
+      "viewPath": "SchedulingPopup"
+    },
+    "/shaftamonthpopup": {
+      "viewPath": "ShaftAmonthpopup"
+    },
+    "/shaftbmonthpopup": {
+      "viewPath": "ShaftBmonthpopup"
+    },
+    "/singlephasemonthpopup": {
+      "viewPath": "Singlephasemonthpopup"
+    },
+    "/success-popup": {
+      "title": "",
+      "viewPath": "Success popup"
+    },
+    "/swappopup": {
+      "viewPath": "SwapPopup"
+    },
+    "/tableview": {
+      "viewPath": "TableView"
+    },
+    "/testt": {
+      "viewPath": "testt"
+    },
+    "/threephasemonthpopup": {
+      "viewPath": "Threephasemonthpopup"
+    },
+    "/timepopup": {
+      "viewPath": "Timepopup"
+    },
+    "/tticmonthpopup": {
+      "viewPath": "TTICmonthpopup"
+    },
+    "/user": {
+      "title": "",
+      "viewPath": "User"
+    },
+    "/user-breakpoint": {
+      "viewPath": "User breakpoint"
+    },
+    "/watermonthpopup": {
+      "viewPath": "WaterMonthpopup"
+    },
+    "/watertimepopup": {
+      "viewPath": "WaterTimePopup"
+    },
+    "/workshopmonthpopup": {
+      "viewPath": "Workshopmonthpopup"
+    }
+  },
+  "sharedDocks": {
+    "cornerPriority": "top-bottom",
+    "left": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "autoHide",
+        "iconUrl": "",
+        "id": "",
+        "modal": false,
+        "resizable": false,
+        "show": "auto",
+        "size": 175,
+        "viewParams": {},
+        "viewPath": "Docked1"
+      }
+    ],
+    "top": [
+      {
+        "anchor": "fixed",
+        "autoBreakpoint": 480,
+        "content": "push",
+        "handle": "hide",
+        "iconUrl": "",
+        "id": "test1",
+        "modal": false,
+        "resizable": false,
+        "show": "visible",
+        "size": 50,
+        "viewParams": {},
+        "viewPath": "Docked2"
+      }
+    ]
+  }
+}

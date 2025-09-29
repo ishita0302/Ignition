@@ -1,0 +1,36 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.16,
+          "width": 0.54,
+          "x": 0.2224,
+          "y": 0.3899
+        },
+        "props": {
+          "text": "Break Added Successfully."
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

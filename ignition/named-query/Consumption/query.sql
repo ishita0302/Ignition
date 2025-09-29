@@ -1,0 +1,8 @@
+SELECT 
+CAST(DateTime AS DATE) AS Day,
+MAX(WATER_CONSUMED) AS WaterConsumed,
+MAX(ENERGY_CONSUMED) AS EnergyConsumed
+FROM CONSUMPTION 
+WHERE DateTime between :StartDate and :EndDate
+GROUP BY CAST(DateTime AS DATE) 
+ORDER BY Day;

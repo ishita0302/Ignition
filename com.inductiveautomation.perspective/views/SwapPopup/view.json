@@ -1,0 +1,145 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Addnew"
+        },
+        "position": {
+          "height": 0.135,
+          "width": 0.83,
+          "x": 0.0823,
+          "y": 0.4198
+        },
+        "props": {
+          "placeholder": "Add",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tself.getSibling(\"Dropdown\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tnamedQuery \u003d \"Addnew\"\n\tparameters \u003d {\"Department\":self.getSibling(\"Addnew\").props.text}\n\tsystem.db.runNamedQuery(namedQuery, parameters)\n#\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.11,
+          "width": 0.29,
+          "x": 0.3248,
+          "y": 0.6048
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../Addnew.props.text}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Add"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.16,
+          "width": 0.595,
+          "x": 0.1923,
+          "y": 0.2348
+        },
+        "props": {
+          "text": "Add Resource..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.11,
+          "width": 0.155,
+          "x": 0.8123,
+          "y": 0.0205
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "solid",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

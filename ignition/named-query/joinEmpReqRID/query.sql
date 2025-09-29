@@ -1,0 +1,1 @@
+INSERT INTO Schedules SELECT E.ID AS itemId, R.RID AS eventId, R.SDateTime AS startDate, R.EDateTime AS endDate, R.Topic AS label, R.l AS leadTime FROM Department AS E join Request AS R ON E.Department=R.Department WHERE :RID NOT IN (SELECT eventId FROM Schedules)

@@ -1,0 +1,1104 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 380,
+      "width": 1000
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.001,
+          "y": 0.0764
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "UrmsΣ"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0711,
+          "width": 0.448
+        },
+        "props": {
+          "style": {
+            "borderStyle": "groove",
+            "fontSize": 20,
+            "textAlign": "center"
+          },
+          "text": "Three Phase Power Analyser"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.064,
+          "x": 0.1428,
+          "y": 0.0792
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]ThreePhaseAnalyzer/UrmsΣ"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.001,
+          "y": 0.157
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "IrmsΣ"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.065,
+          "x": 0.1418,
+          "y": 0.1598
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]ThreePhaseAnalyzer/IrmsΣ"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.001,
+          "y": 0.2377
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "PΣ"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.064,
+          "x": 0.1428,
+          "y": 0.2406
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]ThreePhaseAnalyzer/PΣ"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.228,
+          "y": 0.079
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "LambdaΣ"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_8"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.065,
+          "x": 0.3688,
+          "y": 0.0818
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]ThreePhaseAnalyzer/LambdaΣ.Quality} \u003d \u0027Good\u0027,{[default]ThreePhaseAnalyzer/LambdaΣ},0)"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_9"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.228,
+          "y": 0.1597
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "SΣ"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_11"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.062,
+          "x": 0.3718,
+          "y": 0.1625
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[default]ThreePhaseAnalyzer/SΣ"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_14"
+        },
+        "position": {
+          "height": 0.0764,
+          "rotate": {
+            "anchor": "25% -25%"
+          },
+          "width": 0.22,
+          "x": 0.228,
+          "y": 0.2405
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid"
+          },
+          "text": "fU1"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_15"
+        },
+        "position": {
+          "height": 0.0618,
+          "rotate": {
+            "anchor": "50% -19%"
+          },
+          "width": 0.06,
+          "x": 0.3738,
+          "y": 0.2432
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]ThreePhaseAnalyzer/fU1.Quality} \u003d \u0027Good\u0027, {[default]ThreePhaseAnalyzer/fU1},0)"
+              },
+              "transforms": [
+                {
+                  "expression": "round({value},2)",
+                  "type": "expression"
+                }
+              ],
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FFAC47"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.6737,
+          "width": 0.994,
+          "x": 0.002,
+          "y": 0.3237
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "ThreePhaseAnalyzer"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY HH:mm:ss",
+              "editable": false,
+              "field": "DateTime",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Date Time"
+              },
+              "justify": "left",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_Urms\u0026#00931;",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "UrmsΣ"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_Irms\u0026#00931;",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "IrmsΣ"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_P\u0026#00931;",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "PΣ"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_Lambda\u0026#00931;",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "LambdaΣ"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_S\u0026#00931;",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "S"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Pow_Ana_ThreePhase1_fU1",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "fU1"
+              },
+              "justify": "auto",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "bottom": false
+          },
+          "selection": {
+            "enableRowSelection": false
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "TimeSeriesChart"
+        },
+        "position": {
+          "height": 0.3132,
+          "width": 0.548,
+          "x": 0.452
+        },
+        "propConfig": {
+          "props.series[0].data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now()",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "queryPath": "ThreePhaseAnalyzerTrend"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "series": [
+            {
+              "name": "Boiler"
+            }
+          ],
+          "timeRange": {
+            "visible": false
+          }
+        },
+        "type": "ia.chart.timeseries"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

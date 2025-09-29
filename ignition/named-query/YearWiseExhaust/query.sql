@@ -1,0 +1,6 @@
+SELECT
+    round(SUM(TRY_CAST([EXHAUST & FAN POWER(W)] AS FLOAT))/1000,2) AS [Total_Consumed]
+FROM EXHAUST_FAN
+WHERE YEAR(DateTime) = :selectedYear
+GROUP BY YEAR(DateTime)
+ORDER BY YEAR(DateTime);

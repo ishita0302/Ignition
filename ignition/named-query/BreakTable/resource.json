@@ -1,0 +1,40 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "Query",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "NewConnection",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "fe5c1952ff0ac6463ba6c31b34b675d7e3e28d55d6289dc1f8cd283c4079b13c",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-05-12T13:51:08Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "Department",
+        "sqlType": 7
+      }
+    ]
+  }
+}

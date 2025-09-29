@@ -1,0 +1,351 @@
+{
+  "custom": {
+    "repeaterItems": [
+      {
+        "instancePosition": {},
+        "instanceStyle": {
+          "classes": ""
+        }
+      }
+    ]
+  },
+  "params": {},
+  "propConfig": {
+    "custom.repeaterItems": {
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 510
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tfrom java.util import Calendar\n\t\n\t# Get values from main view\n\tr \u003d self.getSibling(\"RequesterInput\").props.text\n\tt \u003d self.getSibling(\"TopicText\").props.text\n\t\n\t# Get the current date and time\n\tnoww \u003d system.date.now()\n\t\n\t# Get all repeater instances\n\tflexRepeater \u003d self.getSibling(\"FlexRepeater\")\n\tinstances \u003d flexRepeater.props.instances\n\t\n\t# Track if any conflict occurred\n\thasConflict \u003d False\n\t\n\tfor instance in instances:\n\t    f \u003d instance[\"item\"]\n\t    if not f:\n\t        system.perspective.openPopup(\"myID3\", \u0027checkpopup\u0027)  # Validation popup\n\t        continue\n\t\n\t    e \u003d f[\"EDuration\"]\n\t    d \u003d f[\"Department\"]\n\t    s \u003d f[\"SDateTime\"]\n\t    n \u003d f[\"NOD\"]\n\t\n\t    if (d \u003d\u003d \u0027value\u0027) or (s \u003d\u003d \u0027value\u0027) or (e \u003d\u003d \u0027value\u0027):\n\t        system.perspective.openPopup(\"myID3\", \u0027checkpopup\u0027)  # Validation popup\n\t        continue\n\t\n\t    minutes \u003d int(float(e) * 60)\n\t    cal \u003d system.date.addMinutes(s, minutes)\n\t\n\t    parameters \u003d {\"Department\": d, \"SDateTime\": s, \"EDateTime\": cal}\n\t    result \u003d system.db.runNamedQuery(\"Betweenfunc\", parameters)\n\t    result1 \u003d result[0]\n\t    value \u003d result1[\"C\"]\n\t\n\t    if value \u003d\u003d 0:\n\t        if n \u003d\u003d 1:\n\t            nq \u003d \"INSERT INTO Request (ProjectOwner, Department, SDateTime, EDateTime, ProjectDescription, RequestTime) VALUES (?,?,?,?,?,?)\"\n\t            args \u003d [r, d, s, cal, t, noww]\n\t            system.db.runPrepUpdate(nq, args)\n\t        else:\n\t            for no in range(n):\n\t                nq \u003d \"INSERT INTO Request (ProjectOwner, Department, SDateTime, EDateTime, ProjectDescription, RequestTime) VALUES (?,?,?,?,?,?)\"\n\t                args \u003d [r, d, s, cal, t, noww]\n\t                system.db.runPrepUpdate(nq, args)\n\t\n\t                # Skip weekends for start date\n\t                calObj \u003d Calendar.getInstance()\n\t                calObj.setTime(s)\n\t                while True:\n\t                    calObj.add(Calendar.DATE, 1)\n\t                    day \u003d calObj.get(Calendar.DAY_OF_WEEK)\n\t                    if day !\u003d Calendar.SATURDAY and day !\u003d Calendar.SUNDAY:\n\t                        break\n\t                s \u003d calObj.getTime()\n\t\n\t                # Skip weekends for end date\n\t                calObj.setTime(cal)\n\t                while True:\n\t                    calObj.add(Calendar.DATE, 1)\n\t                    day \u003d calObj.get(Calendar.DAY_OF_WEEK)\n\t                    if day !\u003d Calendar.SATURDAY and day !\u003d Calendar.SUNDAY:\n\t                        break\n\t                cal \u003d calObj.getTime()\n\t    else:\n\t        hasConflict \u003d True\n\t\n\t# After all insertions\n\tif hasConflict:\n\t    system.perspective.openPopup(id\u003d\"myID2\", view\u003d\"Fail popup\", draggable\u003dFalse, resizable\u003dFalse, showCloseIcon\u003dFalse, BackgroundDismissible\u003dFalse)\n\t    # Clear requester and topic fields\n\t    self.getSibling(\"RequesterInput\").props.text \u003d \"\"\n\t    self.getSibling(\"TopicText\").props.text \u003d \"\"\n\t\n\t    # Reset Flex Repeater to only the first instance\n\t    if len(instances) \u003e 0:\n\t        firstInstance \u003d instances[0]\n\t\n\t        # Clear resource dropdown value in first instance\n\t        if \"item\" in firstInstance and \"Department\" in firstInstance[\"item\"]:\n\t            firstInstance[\"item\"][\"Department\"] \u003d \"value\"  # or \"\" if blank is preferred\n\t\n\t        # Update Flex Repeater with only the cleaned first instance\n\t        flexRepeater.props.instances \u003d [firstInstance]\n\t\n\t        # Send a message to clear other fields in instance 0\n\t        system.perspective.sendMessage(\n\t            \"clearFields\",\n\t            payload\u003d{},\n\t            scope\u003d\"component\",\n\t            target\u003dflexRepeater.getChild(0)\n\t        )\n\telse:\n\t    system.perspective.openPopup(id\u003d\"myID1\", view\u003d\"Success popup\", draggable\u003dFalse, resizable\u003dFalse, showCloseIcon\u003dFalse, BackgroundDismissible\u003dFalse)\n\t\n\t    # Clear requester and topic fields\n\t    self.getSibling(\"RequesterInput\").props.text \u003d \"\"\n\t    self.getSibling(\"TopicText\").props.text \u003d \"\"\n\t\n\t    # Reset Flex Repeater to only the first instance\n\t    if len(instances) \u003e 0:\n\t        firstInstance \u003d instances[0]\n\t\n\t        # Clear resource dropdown value in first instance\n\t        if \"item\" in firstInstance and \"Department\" in firstInstance[\"item\"]:\n\t            firstInstance[\"item\"][\"Department\"] \u003d \"value\"  # or \"\" if blank is preferred\n\t\n\t        # Update Flex Repeater with only the cleaned first instance\n\t        flexRepeater.props.instances \u003d [firstInstance]\n\t\n\t        # Send a message to clear other fields in instance 0\n\t        system.perspective.sendMessage(\n\t            \"clearFields\",\n\t            payload\u003d{},\n\t            scope\u003d\"component\",\n\t            target\u003dflexRepeater.getChild(0)\n\t        )"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Request_0"
+        },
+        "position": {
+          "height": 0.1062,
+          "rotate": {
+            "anchor": "134% 75%"
+          },
+          "width": 0.1451,
+          "x": 0.7855,
+          "y": 0.0282
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../RequesterInput.props.text}!\u003d\u0027\u0027 \u0026\u0026 {../TopicText.props.text}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "REQUEST"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "RequesterInput"
+        },
+        "position": {
+          "height": 0.1062,
+          "width": 0.5569,
+          "x": 0.222,
+          "y": 0.0285
+        },
+        "props": {
+          "placeholder": "Name",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Requester"
+        },
+        "position": {
+          "height": 0.0933,
+          "width": 0.2235,
+          "x": 0.0052,
+          "y": 0.0414
+        },
+        "props": {
+          "text": "Project Owner"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TopicText"
+        },
+        "position": {
+          "height": 0.1167,
+          "width": 0.7686,
+          "x": 0.2226,
+          "y": 0.1699
+        },
+        "props": {
+          "placeholder": "Project Description",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Topic"
+        },
+        "position": {
+          "height": 0.14,
+          "rotate": {
+            "anchor": "-128% 350%"
+          },
+          "width": 0.1922,
+          "x": 0.0061,
+          "y": 0.1578
+        },
+        "props": {
+          "text": "Project Description"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\n\titems \u003d self.view.custom.repeaterItems\n\n\tif len(items) \u003c 5:\n\t    new_item \u003d {\n\t        \"viewPath\": \"SchedulingFlex\",\n\t        \"viewParams\": {\n\t        \"SDateTime\": None,\n\t            \"item\": {\n\t                \"id\": system.date.now().getTime(),\n\t                \"EDuration\": None,\n\t                \"Department\": None,\n\t                \"SDateTime\": None,\n\t                \"NOD\": None\n\t            }\n\t        }\n\t    }\n\t    items.append(new_item)\n\t    self.view.custom.repeaterItems \u003d items\n\t\n\tif len(items) \u003e\u003d 5:\n\t    self.getSibling(\"Add\").props.enabled \u003d False\n#\t# Get current items\n#\titems \u003d self.view.custom.repeaterItems\n#\t\n#\t# Get values from input fields\n#\trequester \u003d self.getsibling(\u0027RequesterInput\u0027).props.text\n#\ttopic \u003d self.getsibling(\u0027TopicText\u0027).props.text\n#\t\n#\t# Check if both inputs are filled\n#\tif (requester!\u003dNone) and (topic!\u003dNone):\n#\t\tself.getSibling(\"Add\").props.enabled \u003d False\n#\t    # Only allow up to 3 items\n#\t    if len(items) \u003c 3:\n#\t        new_item \u003d {\n#\t            \"viewPath\": \"SchedulingFlex\",\n#\t            \"viewParams\": {\n#\t                \"item\": {\n#\t                    \"id\": system.date.now().getTime(),\n#\t                    \"EDuration\": None,\n#\t                    \"Department\": None,\n#\t                    \"SDateTime\": None\n#\t                }\n#\t            }\n#\t        }\n#\t        items.append(new_item)\n#\t        self.view.custom.repeaterItems \u003d items\n#\t\n#\t    # Disable the \"+\" button if 3 items are added\n#\t    if len(items) \u003e\u003d 3:\n#\t        self.getSibling(\"Add\").props.enabled \u003d False\n#\telse:\n#\t    # Disable the \"+\" button if inputs are not filled\n#\t    self.getSibling(\"Add\").props.enabled \u003d False"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Add"
+        },
+        "position": {
+          "height": 0.0765,
+          "width": 0.0671,
+          "x": 0.3611,
+          "y": 0.3165
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../RequesterInput.props.text}!\u003d\u0027\u0027 \u0026\u0026 {../TopicText.props.text}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "+"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\titems \u003d self.view.custom.repeaterItems\n\n\t# Only remove if there\u0027s at least one item\n\tif len(items) \u003e 0:\n\t    items.pop()  # Remove the last item\n\t    self.view.custom.repeaterItems \u003d items\n\t\n\t# Re-enable the + button if fewer than 3 items remain\n\tif len(items) \u003c 5:\n\t    self.getSibling(\"Add\").props.enabled \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Remove"
+        },
+        "position": {
+          "height": 0.0765,
+          "width": 0.0686,
+          "x": 0.8877,
+          "y": 0.3165
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../RequesterInput.props.text}!\u003d\u0027\u0027 \u0026\u0026 {../TopicText.props.text}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "-"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.08,
+          "width": 0.2039,
+          "x": 0.1456,
+          "y": 0.3131
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Click + to add"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.08,
+          "width": 0.2294,
+          "x": 0.6442,
+          "y": 0.3131
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Click - to remove"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "FlexRepeater"
+        },
+        "position": {
+          "height": 0.57,
+          "width": 0.9804,
+          "x": 0.0078,
+          "y": 0.4133
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.custom.repeaterItems"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "direction": "column",
+          "path": "SchedulingFlex"
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027DDc_6ceC\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.0933,
+          "width": 0.0451,
+          "x": 0.9425,
+          "y": 0.0338
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.1282,
+      "y": -0.1088
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "addRepeaterItem",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\titems \u003d self.view.custom.repeaterItems\n\n\tif len(items) \u003c 5:\n\t    new_item \u003d {\n\t        \"viewPath\": \"SchedulingFlex\",  # Replace with your actual view path\n\t        \"viewParams\": {\n\t            \"item\": {\n\t                \"text\": \"Text Area {}\".format(len(items) + 1)\n\t            }\n\t        }\n\t    }\n\t    items.append(new_item)\n\t    self.view.custom.repeaterItems \u003d items\n\n# Optional: disable the button if needed (you can also send a message back)",
+          "sessionScope": false,
+          "viewScope": false
+        },
+        {
+          "messageType": "removeRepeaterItem",
+          "pageScope": true,
+          "script": "\t\t# implement your handler here\n\t\t# Get current items\n\titems \u003d self.view.custom.repeaterItems\n\tid_to_remove \u003d payload[\"id\"]\n\t\n\t# Filter out the item with the matching ID\n\titems \u003d [item for item in items if item[\"viewParams\"][\"item\"][\"id\"] !\u003d id_to_remove]\n\t\n\t# Update the repeater\n\tself.view.custom.repeaterItems \u003d items\n\t\n\t# Re-enable the + button if fewer than 2 items remain\n\tif len(items) \u003c 5:\n\t    self.getChild(\"Button\").props.enabled \u003d True  # Replace \"Button\" with the actual name of your + button",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.coord"
+  }
+}

@@ -1,0 +1,1 @@
+Select startDate from Schedules where eventId = :event2

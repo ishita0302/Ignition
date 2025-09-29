@@ -1,0 +1,162 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1190
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "ReportViewer"
+        },
+        "position": {
+          "height": 0.8467,
+          "width": 0.98,
+          "x": 0.008,
+          "y": 0.0983
+        },
+        "propConfig": {
+          "props.params.EndDate": {
+            "binding": {
+              "config": {
+                "expression": "{../EndDate.props.value}"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.StartDate": {
+            "binding": {
+              "config": {
+                "expression": "{../StartDate.props.value}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "downloadFilename": "GEC_LAB_CONSUMPTION_REPORT",
+          "page": 1,
+          "pageCount": 10,
+          "source": "Scheduling_Report"
+        },
+        "type": "ia.reporting.report-viewer"
+      },
+      {
+        "meta": {
+          "name": "EndDate"
+        },
+        "position": {
+          "height": 0.0533,
+          "width": 0.1244,
+          "x": 0.671,
+          "y": 0.0149
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "now(0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "08/28/25 13:08",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1076,
+          "x": 0.5614,
+          "y": 0.0149
+        },
+        "props": {
+          "text": "Select End Date"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "StartDate"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "100% 50%"
+          },
+          "width": 0.1345,
+          "x": 0.2407,
+          "y": 0.015
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "addDays(now(0),-1)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY HH:MM",
+          "formattedValue": "08/27/25 13:08",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.date-time-input"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0533,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1151,
+          "x": 0.1251,
+          "y": 0.0151
+        },
+        "props": {
+          "text": "Select Start Date"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

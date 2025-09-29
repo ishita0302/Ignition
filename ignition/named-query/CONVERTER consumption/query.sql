@@ -1,0 +1,2 @@
+SELECT
+  SUM(TRY_CAST([CONVERTER POWER(W)] AS FLOAT)) AS Converter FROM CONVERTER WHERE DateTime between :StartDate and :EndDate

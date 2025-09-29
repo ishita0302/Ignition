@@ -1,0 +1,1 @@
+select ProjectOwner from Request WHERE RID =:eventId

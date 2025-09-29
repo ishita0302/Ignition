@@ -1,0 +1,182 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tnamedQuery \u003d \"Modifynew\"\n\tparameters \u003d {\"Change\": self.getSibling(\"Dropdown\").props.value, \"Department\":self.getSibling(\"Modifynew\").props.text}\n\tsystem.db.runNamedQuery(namedQuery, parameters)\n#\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 22,
+          "width": 58,
+          "x": 67,
+          "y": 142
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../Modifynew.props.text}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Modify"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Modifynew"
+        },
+        "position": {
+          "height": 26,
+          "width": 160,
+          "x": 21.5,
+          "y": 105
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../Dropdown.props.value}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "placeholder": "Modify name",
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.text-field"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 155,
+          "x": 27.5,
+          "y": 28
+        },
+        "props": {
+          "text": "Modify Resource..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 29,
+          "width": 159,
+          "x": 21.5,
+          "y": 63
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "DropdownQuery"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 22,
+          "width": 31,
+          "x": 162.54,
+          "y": 5.02
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

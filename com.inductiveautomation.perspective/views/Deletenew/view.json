@@ -1,0 +1,154 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 200,
+      "width": 200
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tself.getSibling(\"Dropdown\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tnamedQuery \u003d \"Deletenew\"\n\tparameters \u003d {\"Department\":self.getSibling(\"Deletenew\").props.value}\n\tsystem.db.runNamedQuery(namedQuery, parameters)\n#\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 22,
+          "width": 58,
+          "x": 67,
+          "y": 123
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({../Deletenew.props.value}!\u003d\u0027\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Delete"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 146,
+          "x": 30.5,
+          "y": 49
+        },
+        "props": {
+          "text": "Delete Resource..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Deletenew"
+        },
+        "position": {
+          "height": 26,
+          "width": 170,
+          "x": 13.5,
+          "y": 84
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "DropdownQuery"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027SXfGZFK0\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 22,
+          "width": 31,
+          "x": 160.54,
+          "y": 5.02
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

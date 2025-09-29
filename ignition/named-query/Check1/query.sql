@@ -1,0 +1,1 @@
+insert into A values (:ID)

@@ -1,0 +1,1 @@
+UPDATE Request SET Status = 'Slot Assigned' FROM Request JOIN Schedules ON Request.RID = Schedules.eventId

@@ -1,0 +1,1 @@
+delete from Department where Department = :Department

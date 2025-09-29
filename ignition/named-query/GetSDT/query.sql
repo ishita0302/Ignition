@@ -1,0 +1,1 @@
+select SDateTime from Request WHERE RID =:eventId

@@ -1,0 +1,2 @@
+SELECT
+  SUM(TRY_CAST([MICROBIOLOGY LAB POWER(W)] AS FLOAT)) AS Microbiologylab FROM MICROBIOLOGY_LAB WHERE DateTime between :StartDate and :EndDate

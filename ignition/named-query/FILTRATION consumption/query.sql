@@ -1,0 +1,2 @@
+SELECT
+  SUM(TRY_CAST([FILTRATION POWER(W)] AS FLOAT)) AS Filtration FROM FILTRATION WHERE DateTime between :StartDate and :EndDate

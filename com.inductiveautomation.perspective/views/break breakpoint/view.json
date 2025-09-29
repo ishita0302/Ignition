@@ -1,0 +1,37 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "size": "large"
+        },
+        "props": {
+          "path": "break"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "props": {
+          "path": "breaksmall"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "breakpoint": 600
+    },
+    "type": "ia.container.breakpt"
+  }
+}

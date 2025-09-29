@@ -1,0 +1,451 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 300,
+      "width": 400
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\tsystem.perspective.closePopup(\u0027fMsfI0Xk\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "x"
+        },
+        "position": {
+          "height": 0.0814,
+          "width": 0.0694,
+          "x": 0.9022,
+          "y": 0.0191
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FF0000"
+          },
+          "text": "x"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Dropdown"
+        },
+        "position": {
+          "height": 0.0739,
+          "width": 0.3286,
+          "x": 0.3173,
+          "y": 0.1286
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "expression": "dateExtract(now(), \"year\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "options": [
+            {
+              "label": 2025,
+              "value": 2025
+            },
+            {
+              "label": 2026,
+              "value": 2026
+            }
+          ],
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid"
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0849,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.2369,
+          "x": 0.0288,
+          "y": 0.1149
+        },
+        "props": {
+          "text": "Select year"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Table"
+        },
+        "position": {
+          "height": 0.6438,
+          "width": 0.9693,
+          "x": 0.0169,
+          "y": 0.3445
+        },
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "selectedYear": "{../Dropdown.props.value}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "WaterMonthDataPopup"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Month",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "left",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Consumed",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Consumed (KL)"
+              },
+              "justify": "left",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            }
+          ],
+          "pager": {
+            "bottom": false
+          },
+          "selection": {
+            "enableRowSelection": false
+          },
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderStyle": "solid",
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid",
+            "paddingLeft": 2,
+            "paddingRight": 2,
+            "paddingTop": 2
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.3878,
+          "x": 0.0256,
+          "y": 0.239
+        },
+        "props": {
+          "text": "Total Consumption"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1378,
+          "x": 0.4576,
+          "y": 0.2374
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "selectedYear": "{../Dropdown.props.value}"
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "YearWiseWaterConsume"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0],2) # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0856,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.1276,
+          "x": 0.5945,
+          "y": 0.2328
+        },
+        "props": {
+          "text": "KL"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0849,
+          "rotate": {
+            "anchor": "-94% -231%"
+          },
+          "width": 0.4464,
+          "x": 0.0238,
+          "y": 0.0097
+        },
+        "props": {
+          "style": {
+            "color": "#FF8C00"
+          },
+          "text": "WATER Consumption"
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent",
+      "style": {
+        "borderBottomLeftRadius": 10,
+        "borderBottomRightRadius": 10,
+        "borderStyle": "groove",
+        "borderTopLeftRadius": 10,
+        "borderTopRightRadius": 10,
+        "outlineStyle": "groove"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

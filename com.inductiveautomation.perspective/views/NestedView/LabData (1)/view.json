@@ -1,0 +1,246 @@
+{
+  "custom": {},
+  "params": {
+    "Color": "#00AC00",
+    "CurrentReading": "value",
+    "Month": "value",
+    "Name": "value",
+    "Power": "value",
+    "Today": "value"
+  },
+  "propConfig": {
+    "params.Color": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.CurrentReading": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Month": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Name": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Power": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.Today": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 49,
+      "width": 250
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.2268,
+          "width": 1
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Name"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "borderStyle": "double",
+            "fontWeight": "bold",
+            "textAlign": "center"
+          },
+          "textStyle": {
+            "color": "#FF8C00"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.25,
+          "width": 1,
+          "y": 0.2569
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 13,
+            "paddingLeft": 5
+          },
+          "text": "Flow Rate"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.25,
+          "width": 1,
+          "y": 0.4945
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "fontSize": 13,
+            "paddingLeft": 5
+          },
+          "text": "Total Flow"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.1429,
+          "width": 0.45,
+          "x": 0.51,
+          "y": 0.2816
+        },
+        "propConfig": {
+          "props.style.color": {
+            "binding": {
+              "config": {
+                "path": "view.params.Color"
+              },
+              "type": "property"
+            }
+          },
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Power"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "fontSize": 15
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.1429,
+          "width": 0.45,
+          "x": 0.514,
+          "y": 0.5319
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.CurrentReading"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 15
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.25,
+          "width": 1,
+          "y": 0.7393
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "color": "#FFFFFF",
+            "fontSize": 13,
+            "paddingLeft": 5
+          },
+          "text": "Month Total"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.1429,
+          "width": 0.45,
+          "x": 0.5157,
+          "y": 0.7861
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.Month"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "textAlign": "right"
+          },
+          "textStyle": {
+            "color": "#FF8C00",
+            "fontSize": 15
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.8156,
+      "y": -0.6327
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

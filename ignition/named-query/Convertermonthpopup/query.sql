@@ -1,0 +1,7 @@
+SELECT
+    DATENAME(MONTH, DateTime) AS [Month],
+    round(SUM(TRY_CAST([CONVERTER POWER(W)] AS FLOAT))/1000,2) AS [Consumed]
+FROM CONVERTER
+WHERE YEAR(DateTime) = :selectedYear
+GROUP BY DATENAME(MONTH, DateTime), MONTH(DateTime)
+ORDER BY MONTH(DateTime);

@@ -1,0 +1,1 @@
+SELECT e.ID AS itemId, b.startDate, b.endDate FROM Department AS e JOIN Breaks AS b ON e.Department = b.Department

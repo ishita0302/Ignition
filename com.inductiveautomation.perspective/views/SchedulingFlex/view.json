@@ -1,0 +1,298 @@
+{
+  "custom": {},
+  "params": {
+    "item": {
+      "Department": "value",
+      "EDuration": 1,
+      "NOD": 1,
+      "SDateTime": "value"
+    }
+  },
+  "propConfig": {
+    "params.item": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 80,
+      "width": 490
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "EDTPicker"
+        },
+        "position": {
+          "height": 0.3444,
+          "width": 0.1592,
+          "x": 0.5928,
+          "y": 0.4635
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "NoOfHours"
+              },
+              "type": "query"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.item.EDuration"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "EDateTime"
+        },
+        "position": {
+          "height": 0.2375,
+          "width": 0.1653,
+          "x": 0.5931,
+          "y": 0.0438
+        },
+        "props": {
+          "text": "No.of Hrs."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "SDateTime"
+        },
+        "position": {
+          "height": 0.2625,
+          "rotate": {
+            "anchor": "38% 262%"
+          },
+          "width": 0.2689,
+          "x": 0.282,
+          "y": 0.0313
+        },
+        "props": {
+          "minDate": {
+            "$": [
+              "ts",
+              192,
+              1752665181564
+            ],
+            "$ts": 1752719400000
+          },
+          "text": "Start Date Time"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Dropdown_0"
+        },
+        "position": {
+          "height": 0.35,
+          "width": 0.25,
+          "x": 0.0096,
+          "y": 0.4637
+        },
+        "propConfig": {
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "DropdownQuery"
+              },
+              "type": "query"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.item.Department"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "Department"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.2178,
+          "x": 0.0104,
+          "y": 0.0313
+        },
+        "props": {
+          "text": "Resource"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "#\t\t# Get the current item ID\n#\titem_id \u003d self.view.params.item[\u0027id\u0027]\n#\t\n#\t# Get the repeater items from the parent view\n#\titems \u003d self.view.parent.custom.repeaterItems\n#\t\n#\t# Filter out the item with the matching ID\n#\tupdated_items \u003d [item for item in items if item[\u0027viewParams\u0027][\u0027item\u0027][\u0027id\u0027] !\u003d item_id]\n#\t\n#\t# Update the repeater items\n#\tself.view.parent.custom.repeaterItems \u003d updated_items\n#\t\n#\t# Re-enable the \"+\" button if fewer than 3 items remain\n#\tif len(updated_items) \u003c 3:\n#\t    self.view.parent.getChild(\"Add\").props.enabled \u003d True\n\n\titems \u003d self.view.param.repeaterItems\n\n\t# Only remove if there\u0027s at least one item\n\tif len(items) \u003e 0:\n\t    items.pop()  # Remove the last item\n\t    self.view.param.repeaterItems \u003d items\n\t\n\t# Re-enable the + button if fewer than 3 items remain\n\tif len(items) \u003c 5:\n\t    self.getSibling(\"Add\").props.enabled \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Remove",
+          "visible": false
+        },
+        "position": {
+          "height": 0.3143,
+          "width": 0.0392,
+          "x": 0.9408,
+          "y": 0.4618
+        },
+        "props": {
+          "enabled": false,
+          "text": "-"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "NOD"
+        },
+        "position": {
+          "height": 0.25,
+          "width": 0.1816,
+          "x": 0.7952,
+          "y": 0.0563
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "No. of Days"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "NODInput"
+        },
+        "position": {
+          "height": 0.35,
+          "width": 0.1633,
+          "x": 0.7946,
+          "y": 0.4633
+        },
+        "propConfig": {
+          "meta.visible": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.options": {
+            "binding": {
+              "config": {
+                "queryPath": "NoOfDays"
+              },
+              "type": "query"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.item.NOD"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.input.dropdown"
+      },
+      {
+        "meta": {
+          "name": "SDTPicker"
+        },
+        "position": {
+          "height": 0.3625,
+          "width": 0.2694,
+          "x": 0.2815,
+          "y": 0.4625
+        },
+        "propConfig": {
+          "props.minDate": {
+            "binding": {
+              "config": {
+                "expression": "if(dateExtract(now(), \"hour\") \u003c 17, \r\n    dateArithmetic(now(), 1, \"day\"), \r\n    dateArithmetic(now(), 2, \"day\")\r\n)"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\tcal \u003d Calendar.getInstance()\n\tcal.add(Calendar.DATE, 1)\n\tcal.set(Calendar.HOUR_OF_DAY,8)\n\tcal.set(Calendar.MINUTE,0)\n\tcal.set(Calendar.SECOND,0)\n\tcal.set(Calendar.MILLISECOND,0)\n\treturn cal.getTime()",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.value": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.item.SDateTime"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "format": "MM/DD/YY hh:mm",
+          "formattedValue": null
+        },
+        "type": "ia.input.date-time-input"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "removeRepeaterItem",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\t\t\t# implement your handler here\n\t\t# Get current items\n\titems \u003d self.view.param.repeaterItems\n\tid_to_remove \u003d payload[\"id\"]\n\t\n\t# Filter out the item with the matching ID\n\titems \u003d [item for item in items if item[\"viewParams\"][\"item\"][\"id\"] !\u003d id_to_remove]\n\t\n\t# Update the repeater\n\tself.view.param.repeaterItems \u003d items\n\t\n\t# Re-enable the + button if fewer than 2 items remain\n\tif len(items) \u003c 5:\n\t    self.getChild(\"Button\").props.enabled \u003d True  # Replace \"Button\" with the actual name of your + button",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.coord"
+  }
+}

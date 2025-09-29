@@ -1,0 +1,6 @@
+SELECT
+    SUM(ENERGY_CONSUMED) AS [Total_Consumed]
+FROM CONSUMPTION
+WHERE YEAR(DateTime) = :selectedYear AND CAST([DateTime] AS TIME) = '00:00:00'
+GROUP BY YEAR(DateTime)
+ORDER BY YEAR(DateTime);

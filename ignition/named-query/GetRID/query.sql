@@ -1,0 +1,1 @@
+select RID from Request WHERE RID =:eventId

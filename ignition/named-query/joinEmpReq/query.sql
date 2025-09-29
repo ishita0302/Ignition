@@ -1,0 +1,1 @@
+INSERT INTO Schedules SELECT E.ID AS itemId, R.RID AS eventId, R.SDateTime AS startDate, R.EDateTime AS endDate, R.ProjectDescription AS label, R.l AS leadTime FROM Department AS E join Request AS R ON E.Department=R.Department WHERE R.RID NOT IN (SELECT eventId FROM Schedules) AND not (R.Status = 'Slot Not Available')

@@ -1,0 +1,1707 @@
+{
+  "custom": {},
+  "params": {
+    "End1": "value",
+    "End2": "value",
+    "Start1": "value",
+    "Start2": "value",
+    "task1": {
+      "clickCount": 2,
+      "firstId": 296,
+      "secondId": 298
+    }
+  },
+  "propConfig": {
+    "params.End1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.End2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Start1": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.Start2": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.task1": {
+      "paramDirection": "inout",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1164
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "\tnamedQuery \u003d \"joinEmpReq\"\n#\tparameters \u003d {\"RID\": self.getSibling(\"ReqTable\").props.selection.data[0].RID}\n \tsystem.db.runNamedQuery(namedQuery)\n# \tnq \u003d \"ApproveQuery\"\n# \tsystem.db.runNamedQuery(nq)\n# \tsystem.perspective.openPopup(\"myID3\", \u0027Approved\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tself.getSibling(\"EquipmentSchedule\").refreshBinding(\"props.data\")\n#\tself.getSibling(\"Table\").refreshBinding(\"props.data\")\n#\tself.getSibling(\"ReqTable\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": false,
+                  "id": "A2TQ4yW6",
+                  "modal": false,
+                  "overlayDismiss": true,
+                  "resizable": true,
+                  "showCloseIcon": false,
+                  "type": "open",
+                  "viewPath": "Approved",
+                  "viewportBound": false
+                },
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Approve"
+        },
+        "position": {
+          "height": 0.0483,
+          "width": 0.1117,
+          "x": 0.7373,
+          "y": 0.493
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Approve",
+          "textStyle": {
+            "fontSize": 15
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.4085,
+          "x": 0.025,
+          "y": 0.4969
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontSize": 20,
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Admin approval needed for these Schedules..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.04,
+          "width": 0.0739,
+          "x": 0.0241,
+          "y": 0.0143
+        },
+        "props": {
+          "style": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontSize": 20,
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          },
+          "text": "Schedules..."
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "#\tnamedQuery \u003d \"Reject\"\n#\tparameters \u003d {\"RID\": self.getSibling(\"ReqTable\").props.selection.data[0].RID}\n#\tsystem.db.runNamedQuery(namedQuery, parameters)\n#\tsystem.perspective.openPopup(\"myID4\", \u0027Rejectedpopup\u0027)\n\tnamedQuery \u003d \"Reject\"\n\tselectedRows \u003d self.getSibling(\"ReqTable\").props.selection.data\n\t\n\tfor row in selectedRows:\n\t    parameters \u003d {\"RID\": row[\"RID\"]}\n\t    system.db.runNamedQuery(namedQuery, parameters)\n\t\n#\tsystem.perspective.openPopup(\"myID4\", \u0027Rejectedpopup\u0027)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tself.getSibling(\"EquipmentSchedule\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": false,
+                  "id": "pp685a9O",
+                  "modal": false,
+                  "overlayDismiss": true,
+                  "resizable": true,
+                  "showCloseIcon": false,
+                  "type": "open",
+                  "viewPath": "Rejectedpopup",
+                  "viewportBound": false
+                },
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Reject"
+        },
+        "position": {
+          "height": 0.0483,
+          "width": 0.1117,
+          "x": 0.8729,
+          "y": 0.493
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]}\u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Reject",
+          "textStyle": {
+            "fontSize": 15
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onDeleteEvent": {
+              "config": {
+                "script": "\t\t# Get the list of scheduled events\n\tscheduled \u003d self.props.scheduledEvents\n\t\n\t# Get the ID of the event to delete\n\tevent_id \u003d event.eventId\n\titem_id \u003d event.itemId\n\t\n\t# Run the Named Query to update and delete from the database\n\tparams \u003d {\"eventId\": event_id}\n#\tsystem.db.runNamedQuery(\"UpdateRequestStatus\", params)  # Named Query: update Request set Status \u003d \u0027Slot Not Available\u0027 where RID \u003d :eventId\n\tsystem.db.runNamedQuery(\"DeleteSchedule\", params)       # Named Query: delete from Schedules where eventId \u003d :eventId\n\t\n\t# Remove the event from the component\u0027s props\n\tself.props.scheduledEvents \u003d [e for e in scheduled if not (e[\u0027eventId\u0027] \u003d\u003d event_id and e[\u0027itemId\u0027] \u003d\u003d item_id)]"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onMoveEvent": {
+              "config": {
+                "script": "#\t# Assume you have the IDs of the two tasks to swap\n#\ttask1_id \u003d self.props.selectedEvent.eventId\n#\ttask2_id \u003d self.props.selectedEvent.eventId\n#\t\n#\t# Step 1: Fetch startDate and endDate of both tasks\n#\tquery \u003d \"SELECT eventId, startDate, endDate FROM Schedules WHERE eventId IN (?, ?)\"\n#\ttasks \u003d system.db.runPrepQuery(query, [task1_id, task2_id])\n#\t\n#\tif len(tasks) !\u003d 2:\n#\t    system.perspective.print(\"Error: One or both tasks not found.\")\n#\telse:\n#\t    # Extract task data\n#\t    task1 \u003d tasks[0] if tasks[0][\u0027eventId\u0027] \u003d\u003d task1_id else tasks[1]\n#\t    task2 \u003d tasks[1] if tasks[0][\u0027eventId\u0027] \u003d\u003d task1_id else tasks[0]\n#\t\n#\t    # Calculate durations\n#\t    duration1 \u003d system.date.getTime(task1[\u0027endDate\u0027]) - system.date.getTime(task1[\u0027startDate\u0027])\n#\t    duration2 \u003d system.date.getTime(task2[\u0027endDate\u0027]) - system.date.getTime(task2[\u0027startDate\u0027])\n#\t\n#\t    # Swap startDates\n#\t    newStart1 \u003d task2[\u0027startDate\u0027]\n#\t    newStart2 \u003d task1[\u0027startDate\u0027]\n#\t\n#\t    # Calculate new endDates\n#\t    newEnd1 \u003d system.date.addMillis(newStart1, duration1)\n#\t    newEnd2 \u003d system.date.addMillis(newStart2, duration2)\n#\t\n#\t    # Step 2: Update both tasks in the database\n#\t    updateQuery \u003d \"UPDATE Schedules SET startDate \u003d ?, endDate \u003d ? WHERE eventId \u003d ?\"\n#\t    system.db.runPrepUpdate(updateQuery, [newStart1, newEnd1, task1_id])\n#\t    system.db.runPrepUpdate(updateQuery, [newStart2, newEnd2, task2_id])"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onResizeEvent": {
+              "config": {
+                "script": "\t# Get selected event details\n\teventId \u003d self.props.selectedEvent.eventId\n\titemId \u003d self.props.selectedEvent.itemId\n\t\n\t# Step 1: Get the original startDate and endDate from the database\n\tquery \u003d \"SELECT startDate, endDate FROM Schedules WHERE eventId \u003d ?\"\n\teventData \u003d system.db.runPrepQuery(query, [eventId])[0]\n\toriginalStartDate \u003d eventData[\u0027startDate\u0027]\n\toriginalEndDate \u003d eventData[\u0027endDate\u0027]\n\t\n\t# Step 2: Calculate newEndDate as originalEndDate + 15 minutes\n\tnewEndDate \u003d system.date.addMinutes(originalEndDate, 60)\n\t\n\t# Step 3: Update the resized task\u0027s endDate\n\tupdateMain \u003d \"UPDATE Schedules SET endDate \u003d ? WHERE eventId \u003d ?\"\n\tsystem.db.runPrepUpdate(updateMain, [newEndDate, eventId])\n\t\n\t# Step 4: Get all tasks on the same date and itemId, ordered by startDate\n\teventDate \u003d system.date.format(originalStartDate, \"yyyy-MM-dd\")\n\tqueryTasks \u003d \"\"\"\n\tSELECT eventId, startDate, endDate \n\tFROM Schedules \n\tWHERE itemId \u003d ? \n\t  AND eventId !\u003d ? \n\t  AND CONVERT(date, startDate) \u003d ? \n\tORDER BY startDate\n\t\"\"\"\n\ttasks \u003d system.db.runPrepQuery(queryTasks, [itemId, eventId, eventDate])\n\t\n\t# Step 5: Shift only those tasks that start at originalEndDate and recursively shift others to avoid overlap\n\tshiftMinutes \u003d 60\n\tcurrentEnd \u003d newEndDate\n\tfor task in tasks:\n\t    if task[\u0027startDate\u0027] \u003d\u003d originalEndDate or task[\u0027startDate\u0027] \u003c currentEnd:\n\t        # Overlap detected or direct dependency\n\t        newStart \u003d system.date.addMinutes(task[\u0027startDate\u0027], shiftMinutes)\n\t        newEnd \u003d system.date.addMinutes(task[\u0027endDate\u0027], shiftMinutes)\n\t        updateTask \u003d \"UPDATE Schedules SET startDate \u003d ?, endDate \u003d ? WHERE eventId \u003d ?\"\n\t        system.db.runPrepUpdate(updateTask, [newStart, newEnd, task[\u0027eventId\u0027]])\n\t        currentEnd \u003d newEnd  # Update currentEnd to check for next overlaps\n\t    else:\n\t        break  # No overlap, stop shifting\n\t        \n#\t        \n## Get selected event details\n#eventId \u003d self.props.selectedEvent.eventId\n#itemId \u003d self.props.selectedEvent.itemId\n#\n## Step 1: Get the original startDate and endDate from the database\n#query \u003d \"SELECT startDate, endDate FROM Schedules WHERE eventId \u003d ?\"\n#eventData \u003d system.db.runPrepQuery(query, [eventId])[0]\n#originalStartDate \u003d eventData[\u0027startDate\u0027]\n#originalEndDate \u003d eventData[\u0027endDate\u0027]\n#\n## Step 2: Calculate newEndDate as originalEndDate + 15 minutes\n#newEndDate \u003d system.date.addMinutes(originalEndDate, 15)\n#\n## Step 3: Update the resized task\u0027s endDate\n#updateMain \u003d \"UPDATE Schedules SET endDate \u003d ? WHERE eventId \u003d ?\"\n#system.db.runPrepUpdate(updateMain, [newEndDate, eventId])\n#\n## Step 4: Shift only those tasks that:\n## - Are on the same date\n## - Have startDate equal to originalEndDate\n## - Belong to the same itemId\n#updateOthers \u003d \"\"\"\n#UPDATE Schedules \n#SET startDate \u003d DATEADD(MINUTE, 15, startDate), \n#    endDate \u003d DATEADD(MINUTE, 15, endDate) \n#WHERE itemId \u003d ? \n#  AND eventId !\u003d ? \n#  AND CONVERT(date, startDate) \u003d ? \n#  AND startDate \u003d ?\n#\"\"\"\n#eventDate \u003d system.date.format(originalStartDate, \"yyyy-MM-dd\")\n#system.db.runPrepUpdate(updateOthers, [itemId, eventId, eventDate, originalEndDate])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          },
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\t\t# Get current state\n\teventState \u003d self.view.params.task1\n\tclickedId \u003d self.props.selectedEvent[\u0027eventId\u0027]  # Assuming \u0027event\u0027 is the clicked event object\n\t\n\t# Update click count and store IDs\n\tif eventState[\u0027clickCount\u0027] \u003d\u003d 0:\n\t    self.view.params.task1 \u003d {\n\t        \"firstId\": clickedId,\n\t        \"secondId\": None,\n\t        \"clickCount\": 1\n\t    }\n\telif eventState[\u0027clickCount\u0027] \u003d\u003d 1:\n\t    self.view.params.task1 \u003d {\n\t        \"firstId\": eventState[\u0027firstId\u0027],\n\t        \"secondId\": clickedId,\n\t        \"clickCount\": 2\n\t    }\n\telse:\n\t    # Reset after 2 clicks\n\t    self.view.params.task1 \u003d {\n\t        \"firstId\": clickedId,\n\t        \"secondId\": None,\n\t        \"clickCount\": 1\n\t    }"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "yiKlMo63",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewParams": {
+                  "eventId": "{/root/EquipmentSchedule.props.selectedEvent.eventId}"
+                },
+                "viewPath": "Detailspopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            },
+            "onSelect": {
+              "config": {
+                "script": "\t\t# Assume you have the IDs of the two tasks to swap\n\ttask1_id \u003d self.props.selectedEvent.eventId\n\ttask2_id \u003d self.props.selectedEvent.eventId\n\t\n\t# Step 1: Fetch startDate and endDate of both tasks\n\tquery \u003d \"SELECT eventId, startDate, endDate FROM Schedules WHERE eventId IN (?, ?)\"\n\ttasks \u003d system.db.runPrepQuery(query, [task1_id, task2_id])\n\t\n\tif len(tasks) !\u003d 2:\n\t    system.perspective.print(\"Error: One or both tasks not found.\")\n\telse:\n\t    # Extract task data\n\t    task1 \u003d tasks[0] if tasks[0][\u0027eventId\u0027] \u003d\u003d task1_id else tasks[1]\n\t    task2 \u003d tasks[1] if tasks[0][\u0027eventId\u0027] \u003d\u003d task1_id else tasks[0]\n\t\n\t    # Calculate durations\n\t    duration1 \u003d system.date.getTime(task1[\u0027endDate\u0027]) - system.date.getTime(task1[\u0027startDate\u0027])\n\t    duration2 \u003d system.date.getTime(task2[\u0027endDate\u0027]) - system.date.getTime(task2[\u0027startDate\u0027])\n\t\n\t    # Swap startDates\n\t    newStart1 \u003d task2[\u0027startDate\u0027]\n\t    newStart2 \u003d task1[\u0027startDate\u0027]\n\t\n\t    # Calculate new endDates\n\t    newEnd1 \u003d system.date.addMillis(newStart1, duration1)\n\t    newEnd2 \u003d system.date.addMillis(newStart2, duration2)\n\t\n\t    # Step 2: Update both tasks in the database\n\t    updateQuery \u003d \"UPDATE Schedules SET startDate \u003d ?, endDate \u003d ? WHERE eventId \u003d ?\"\n\t    system.db.runPrepUpdate(updateQuery, [newStart1, newEnd1, task1_id])\n\t    system.db.runPrepUpdate(updateQuery, [newStart2, newEnd2, task2_id])"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "EquipmentSchedule"
+        },
+        "position": {
+          "height": 0.4033,
+          "width": 0.9837,
+          "x": 0.0062,
+          "y": 0.068
+        },
+        "propConfig": {
+          "props.dateRange.endDate": {
+            "binding": {
+              "config": {
+                "expression": "addDays(now(),5)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.dateRange.startDate": {
+            "binding": {
+              "config": {
+                "expression": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\tcal \u003d Calendar.getInstance()\n\tcal.set(Calendar.HOUR_OF_DAY,6)\n\tcal.set(Calendar.MINUTE,0)\n\tcal.set(Calendar.SECOND,0)\n\tcal.set(Calendar.MILLISECOND,0)\n\treturn cal.getTime()",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.deleteEnabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.downtimeEvents": {
+            "binding": {
+              "config": {
+                "expression": "now()"
+              },
+              "transforms": [
+                {
+                  "code": "\tfrom java.util import Calendar\n\tfrom java.util import ArrayList, HashMap\n\t\n\t# Configuration\n\tnumDays \u003d 7  # Number of future days to repeat\n\t\n\t# Fetch item IDs dynamically from database\n\tquery \u003d \"SELECT ID FROM Department\"\n\titems \u003d [row[\u0027ID\u0027] for row in system.db.runQuery(query)]\n\t\n\t# Result list\n\tevents \u003d ArrayList()\n\t\n\tfor itemId in items:\n\t    # Add today\u0027s early morning downtime (from yesterday 18:30 to today 07:30)\n\t    startCal \u003d Calendar.getInstance()\n\t    startCal.add(Calendar.DATE, -1)\n\t    startCal.set(Calendar.HOUR_OF_DAY, 20)\n\t    startCal.set(Calendar.MINUTE, 0)\n\t    startCal.set(Calendar.SECOND, 0)\n\t    startCal.set(Calendar.MILLISECOND, 0)\n\t    start \u003d startCal.getTime()\n\t\n\t    endCal \u003d Calendar.getInstance()\n\t    endCal.set(Calendar.HOUR_OF_DAY, 8)\n\t    endCal.set(Calendar.MINUTE, 0)\n\t    endCal.set(Calendar.SECOND, 0)\n\t    endCal.set(Calendar.MILLISECOND, 0)\n\t    end \u003d endCal.getTime()\n\t\n\t    event \u003d HashMap()\n\t    event[\"itemId\"] \u003d itemId\n\t    event[\"startDate\"] \u003d start\n\t    event[\"endDate\"] \u003d end\n\t    events.add(event)\n\t\n\t    # Add future 7 days of downtime\n\t    for i in range(numDays):\n\t        startCal \u003d Calendar.getInstance()\n\t        startCal.add(Calendar.DATE, i)\n\t        startCal.set(Calendar.HOUR_OF_DAY, 20)\n\t        startCal.set(Calendar.MINUTE, 0)\n\t        startCal.set(Calendar.SECOND, 0)\n\t        startCal.set(Calendar.MILLISECOND, 0)\n\t        start \u003d startCal.getTime()\n\t\n\t        endCal \u003d Calendar.getInstance()\n\t        endCal.add(Calendar.DATE, i + 1)\n\t        endCal.set(Calendar.HOUR_OF_DAY, 8)\n\t        endCal.set(Calendar.MINUTE, 0)\n\t        endCal.set(Calendar.SECOND, 0)\n\t        endCal.set(Calendar.MILLISECOND, 0)\n\t        end \u003d endCal.getTime()\n\t\n\t        event \u003d HashMap()\n\t        event[\"itemId\"] \u003d itemId\n\t        event[\"startDate\"] \u003d start\n\t        event[\"endDate\"] \u003d end\n\t        events.add(event)\n\t\n\treturn events",
+                  "type": "script"
+                }
+              ],
+              "type": "expr"
+            }
+          },
+          "props.items": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "SchedulerNames",
+                "returnFormat": "json"
+              },
+              "type": "query"
+            }
+          },
+          "props.scheduledEvents": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "join1-EmpReq",
+                "returnFormat": "json"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "dateRange": {},
+          "progressBar": {
+            "enabled": false
+          },
+          "selectedEvent": {
+            "eventId": 298,
+            "itemId": 26
+          },
+          "style": {
+            "borderBottomLeftRadius": 10,
+            "borderBottomRightRadius": 10,
+            "borderStyle": "solid",
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid",
+            "paddingBottom": 2,
+            "paddingLeft": 2,
+            "paddingRight": 2,
+            "paddingTop": 2
+          }
+        },
+        "type": "ia.display.equipmentschedule"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": false,
+                "id": "SXfGZFK0",
+                "modal": false,
+                "overlayDismiss": true,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Addnew",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "height": 0.045,
+          "width": 0.055,
+          "x": 0.5111,
+          "y": 0.0129
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "color": "#8AFFFF"
+            },
+            "style": {
+              "fill": "#FF0000"
+            }
+          },
+          "text": "Add"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0564,
+          "width": 0.1177,
+          "x": 0.3922,
+          "y": 0.0074
+        },
+        "props": {
+          "text": "Add New Resource",
+          "textStyle": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": [
+              {
+                "config": {
+                  "script": "#\tnamedQuery \u003d \"joinEmpReq\"\n##\tparameters \u003d {\"RID\": self.getSibling(\"ReqTable\").props.selection.data[0].RID}\n# \tsystem.db.runNamedQuery(namedQuery)\n## \tnq \u003d \"ApproveQuery\"\n## \tsystem.db.runNamedQuery(nq)\n## \tsystem.perspective.openPopup(\"myID3\", \u0027Approved\u0027)\n\tnamedQuery \u003d \"joinEmpReqRID\"\n\tselectedRows \u003d self.getSibling(\"ReqTable\").props.selection.data\n\t\t\n\tfor row in selectedRows:\n\t\tparameters \u003d {\"RID\": row[\"RID\"]}\n\t\tsystem.db.runNamedQuery(namedQuery, parameters)"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "script": "\tself.getSibling(\"EquipmentSchedule\").refreshBinding(\"props.data\")\n#\tself.getSibling(\"Table\").refreshBinding(\"props.data\")\n#\tself.getSibling(\"ReqTable\").refreshBinding(\"props.data\")"
+                },
+                "scope": "G",
+                "type": "script"
+              },
+              {
+                "config": {
+                  "draggable": true,
+                  "id": "A2TQ4yW6",
+                  "modal": false,
+                  "overlayDismiss": false,
+                  "resizable": true,
+                  "showCloseIcon": true,
+                  "type": "open",
+                  "viewPath": "Approved",
+                  "viewportBound": false
+                },
+                "scope": "C",
+                "type": "popup"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Approve_0"
+        },
+        "position": {
+          "height": 0.0483,
+          "width": 0.1598,
+          "x": 0.5537,
+          "y": 0.4931
+        },
+        "props": {
+          "enabled": false,
+          "text": "Approve Selected only",
+          "textStyle": {
+            "fontSize": 15
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onEditCellCommit": {
+              "config": {
+                "script": "\t# Only handle edits to the \"Remark\" column\n\tif event.column \u003d\u003d \"Remark\":\n\t    newRemark \u003d event.value\n\t    rowIndex \u003d event.row\n#\t    rid \u003d self.props.data[rowIndex][\"RID\"]\n\t\t\n\t\t# Convert dataset to PyDataSet\n\t    data \u003d system.dataset.toPyDataSet(self.props.data)\n\t\n\t    # Now you can access it like a list of dictionaries\n\t    rid \u003d data[rowIndex][\"RID\"]\n\t\n\t    # Call the named query to update the database\n\t    system.db.runNamedQuery(\n\t        \"Remarkadd\",  # Adjust path if it\u0027s in a folder\n\t        {\n\t            \"newRemark\": newRemark,\n\t            \"rid\": rid\n\t        }\n\t    )\n\t\t\n#\t    Optional: Refresh the table data if it\u0027s bound to a query\n\t    self.refreshBinding(\"props.data\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "ReqTable"
+        },
+        "position": {
+          "height": 0.425,
+          "width": 0.9837,
+          "x": 0.0066,
+          "y": 0.5529
+        },
+        "propConfig": {
+          "props.columns[9].visible": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "3"
+                },
+                "queryPath": "ReqTableQuery"
+              },
+              "type": "query"
+            }
+          }
+        },
+        "props": {
+          "columns": [
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "RID",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "ID"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "descending",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": 40
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YY hh:mm",
+              "editable": false,
+              "field": "RequestTime",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Request Time"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "descending",
+              "sortable": true,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Department",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Resource"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ProjectDescription",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Project Desc."
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Duration(min)",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YY hh:mm",
+              "editable": false,
+              "field": "SDateTime",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Project Start"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YY hh:mm",
+              "editable": false,
+              "field": "EDateTime",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Project End"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "Status",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": false,
+              "field": "ProjectOwner",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": "Project Owner"
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "visible": true,
+              "width": ""
+            },
+            {
+              "align": "center",
+              "boolean": "checkbox",
+              "dateFormat": "MM/DD/YYYY",
+              "editable": true,
+              "field": "Remark",
+              "filter": {
+                "boolean": {
+                  "condition": ""
+                },
+                "date": {
+                  "condition": "",
+                  "value": ""
+                },
+                "enabled": false,
+                "number": {
+                  "condition": "",
+                  "value": ""
+                },
+                "string": {
+                  "condition": "",
+                  "value": ""
+                },
+                "visible": "on-hover"
+              },
+              "footer": {
+                "align": "center",
+                "justify": "left",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "header": {
+                "align": "center",
+                "justify": "center",
+                "style": {
+                  "classes": ""
+                },
+                "title": ""
+              },
+              "justify": "center",
+              "nullFormat": {
+                "includeNullStrings": false,
+                "nullFormatValue": "",
+                "strict": false
+              },
+              "number": "value",
+              "numberFormat": "0,0.##",
+              "progressBar": {
+                "bar": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "max": 100,
+                "min": 0,
+                "track": {
+                  "color": "",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "value": {
+                  "enabled": true,
+                  "format": "0,0.##",
+                  "justify": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                }
+              },
+              "render": "auto",
+              "resizable": true,
+              "sort": "none",
+              "sortable": false,
+              "strictWidth": false,
+              "style": {
+                "classes": ""
+              },
+              "toggleSwitch": {
+                "color": {
+                  "selected": "",
+                  "unselected": ""
+                }
+              },
+              "viewParams": {},
+              "viewPath": "",
+              "width": ""
+            }
+          ],
+          "filter": {
+            "enabled": true
+          },
+          "pager": {
+            "activeOption": 7,
+            "bottom": false,
+            "options": [
+              7,
+              10,
+              25,
+              50,
+              100
+            ]
+          },
+          "selection": {
+            "mode": "multiple interval"
+          },
+          "style": {
+            "borderTopLeftRadius": 10,
+            "borderTopRightRadius": 10,
+            "outlineStyle": "solid",
+            "paddingLeft": 2,
+            "paddingRight": 2,
+            "paddingTop": 2
+          }
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": false,
+                "id": "SXfGZFK0",
+                "modal": false,
+                "overlayDismiss": true,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Deletenew",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "height": 0.045,
+          "width": 0.055,
+          "x": 0.719,
+          "y": 0.0129
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Delete"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0564,
+          "width": 0.0997,
+          "x": 0.6177,
+          "y": 0.0074
+        },
+        "props": {
+          "text": "Delete Resource",
+          "textStyle": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "draggable": false,
+                "id": "SXfGZFK0",
+                "modal": false,
+                "overlayDismiss": true,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Modifynew",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "height": 0.045,
+          "width": 0.055,
+          "x": 0.926,
+          "y": 0.0129
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "text": "Modify"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0564,
+          "width": 0.1031,
+          "x": 0.8211,
+          "y": 0.0074
+        },
+        "props": {
+          "text": "Modify Resource",
+          "textStyle": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onClick": {
+              "config": {
+                "script": "\n\tfrom datetime import datetime\n\t# Get the selected events\n\tevent1 \u003d self.view.params.task1.firstId\n\tevent2 \u003d self.view.params.task1.secondId\n\t\n\t# Run named queries and store results\n\tresult1 \u003d system.db.runNamedQuery(\u0027FetchStart1\u0027, {\u0027eventId\u0027: event1})\n\tresult2 \u003d system.db.runNamedQuery(\u0027FetchStart2\u0027, {\u0027eventId\u0027: event2})\n\trrresult1 \u003d system.db.runNamedQuery(\u0027FetchEnd1\u0027, {\u0027eventId\u0027: event1})\n\trrresult2 \u003d system.db.runNamedQuery(\u0027FetchEnd2\u0027, {\u0027eventId\u0027: event2})\n\t\n\tself.view.params.Start1 \u003d system.date.format(result1[0][\u0027startDate\u0027], \"yyyy-MM-dd HH:mm:ss\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_2"
+        },
+        "position": {
+          "height": 0.045,
+          "width": 0.055,
+          "x": 0.2861,
+          "y": 0.0129
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "if({session.props.auth.user.roles[0]} \u003d \u0027Administrator\u0027,true,false)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "color": "#8AFFFF"
+            },
+            "style": {
+              "fill": "#FF0000"
+            }
+          },
+          "text": "Swap"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0564,
+          "width": 0.0988,
+          "x": 0.1843,
+          "y": 0.0074
+        },
+        "props": {
+          "text": "Swap schedules",
+          "textStyle": {
+            "color": "#00AC00",
+            "fontFamily": "serif",
+            "fontStyle": "italic",
+            "fontWeight": "bold"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": -0.0034,
+      "y": -0.0313
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

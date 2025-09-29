@@ -1,0 +1,1 @@
+select Department from Request WHERE RID =:eventId

@@ -1,0 +1,1 @@
+Select endDate from Schedules where eventId = :event2

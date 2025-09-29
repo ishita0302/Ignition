@@ -1,0 +1,1689 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 600,
+      "width": 1164
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0467,
+          "width": 0.9966,
+          "x": 0.0025,
+          "y": 0.0034
+        },
+        "props": {
+          "style": {
+            "borderStyle": "solid",
+            "textAlign": "center"
+          },
+          "text": "GEC LAB LIVE DATA"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "ch8b5XrH",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "TTICmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.1383,
+          "x": 0.0009,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/TTIC_LAB_POWER} \u003e 0, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/TTIC_LAB_READING}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "TTIC_LAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/TTIC_LAB_POWER},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "TTIC LAB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "DZ1E2A4e",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Filtrationmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_0"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.1423,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Filteration_Lab_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Filteration_Lab_Reading}/1000, 0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "FILTRATION consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Filteration_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "FILTRATION"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "tmkqCIFt",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Microbiologymonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_1"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.2872,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Micro_Lab_Power} \u003e 0, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Micro_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "MICROBIOLOGY_LAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2) # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Micro_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "MICROBIOLOGY"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_2"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.4302,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Pool_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Pool_Lab_Power}/1000,2)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Pool_Lab_Reading},2)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Month": 0,
+            "Name": "POOL AREA"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_3"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.5724,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Pool_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Pump area1_Lab_reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Pump area1_Lab_Power},2)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Month": 0,
+            "Name": "PUMP AREA - 1"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_4"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.7155,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/pump area2_Lab_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pump area2_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pump area2_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Month": 0,
+            "Name": "PUMP AREA - 2"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_5"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.8586,
+          "y": 0.05
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/pump area3_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pump area3_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pump area3_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Month": 0,
+            "Name": "PUMP AREA - 3"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "tATYagYV",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Exhaustmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_6"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.7155,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/exh_Lab_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/exh_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "EXHAUST_FAN consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/exh_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "EXHUAST \u0026 FAN"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "5608AA0t",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Filtermonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_7"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.8586,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Fitter_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Fitter_Lab_Reaing}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "FILTER consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Fitter_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "FILTER"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "6ZyGZWk3",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Electronicsmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_8"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.5724,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Elect_Lab_Power}\u003e 0, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Elect_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "ELECTRONICS_LAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Elect_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "ELECTRONIC LAB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "khz_1Rz9",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "IOTmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_9"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.4302,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/IOT_Lab_Power}\u003e 0, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/IOT_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "IOT_LAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/IOT_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "IOT LAB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "GMFQOtCm",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Openareamonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_10"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.2872,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/openarea_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/openarea_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "DETAILS consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2) # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/openarea_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "OPEN AREA"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "RYprnCNV",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Workshopmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_11"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.144,
+          "y": 0.3612
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Workshop_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Worshop_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "WORKSHOP_LAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Workshop_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "WORKSHOP LAB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "EmbeddedView_12"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.0009,
+          "y": 0.3611
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/pump area4_Lab_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pupm area4_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/pump area4_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Month": 0,
+            "Name": "PUMP AREA - 4"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "35uOx_al",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "ShaftAmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_13"
+        },
+        "position": {
+          "height": 0.2983,
+          "width": 0.14,
+          "x": 0.7155,
+          "y": 0.6756
+        },
+        "propConfig": {
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/SHAFT_A_WATER},2)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "LiveShaft A"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0],2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/SHAFT_A_FLOWRATE},2)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "SHAFT A KLTR"
+          },
+          "path": "NestedView/LabData (1)",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "IJkzhWt-",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "ShaftBmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_14"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.8586,
+          "y": 0.6739
+        },
+        "propConfig": {
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/SHAFT_B_WATER},2)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "LiveShaft B"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0],2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/SHAFT_B_FLOWRATE}/1000000000000000000,0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "SHAFT B KLTR"
+          },
+          "path": "NestedView/LabData (1)",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "aNBZLfO2",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Threephasemonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_15"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.5724,
+          "y": 0.6756
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Three_Phase_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Three_Phase_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "ThreePhaseConsumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Three_Phase_Power}\u003e1,{[default]GEC_LAB/Three_Phase_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "THREE PHASE"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "67KBZxhU",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Singlephasemonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_16"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.4302,
+          "y": 0.6773
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Single_Phase_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Single_Phase_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "SinglePhase consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Single_Phase_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "SINGLE PHASE"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "Ls_0FJVe",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Convertermonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_17"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.2872,
+          "y": 0.6773
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/Converter_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Converter_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "CONVERTER consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/Converter_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "CONVERTER"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "hX1FEfYp",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "Motortestmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_18"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.144,
+          "y": 0.6756
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/motor_Lab_Power} \u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/motor_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "MOTORTESTLAB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/motor_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "MOTOR TEST LAB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "dom": {
+            "onDoubleClick": {
+              "config": {
+                "draggable": false,
+                "id": "isDexEcY",
+                "modal": false,
+                "overlayDismiss": false,
+                "resizable": true,
+                "showCloseIcon": false,
+                "type": "open",
+                "viewPath": "RPDBmonthpopup",
+                "viewportBound": false
+              },
+              "scope": "C",
+              "type": "popup"
+            }
+          }
+        },
+        "meta": {
+          "name": "EmbeddedView_19"
+        },
+        "position": {
+          "height": 0.3,
+          "width": 0.14,
+          "x": 0.0009,
+          "y": 0.6756
+        },
+        "propConfig": {
+          "props.params.Color": {
+            "binding": {
+              "config": {
+                "expression": "if({[default]GEC_LAB/RPDB_Lab_Power}\u003e 1, \"#FF0000\",\"#FF8C00\")"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.CurrentReading": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/RPDB_Lab_Reading}/1000,0)"
+              },
+              "type": "expr"
+            }
+          },
+          "props.params.Month": {
+            "binding": {
+              "config": {
+                "parameters": {
+                  "EndDate": "now(0)",
+                  "StartDate": "dateFormat(addMonths(now(), 0), \"yyyy-MM\") + \"-01 00:00:00\""
+                },
+                "polling": {
+                  "enabled": true,
+                  "rate": "30"
+                },
+                "queryPath": "RPDB_WPDB consumption"
+              },
+              "transforms": [
+                {
+                  "code": "\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "type": "script"
+                }
+              ],
+              "type": "query"
+            }
+          },
+          "props.params.Power": {
+            "binding": {
+              "config": {
+                "expression": "round({[default]GEC_LAB/RPDB_Lab_Power},0)"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "Name": "RPDB WPDB"
+          },
+          "path": "NestedView/LabData",
+          "style": {
+            "borderStyle": "groove",
+            "color": "#00ACAC"
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0.0069,
+      "y": -0.0767
+    },
+    "props": {
+      "mode": "percent"
+    },
+    "type": "ia.container.coord"
+  }
+}

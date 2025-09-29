@@ -1,0 +1,2 @@
+SELECT
+  SUM(TRY_CAST([ELECTRONICS LAB POWER(W)] AS FLOAT)) AS Electronicslab FROM ELECTRONICS_LAB WHERE DateTime between :StartDate and :EndDate
