@@ -1,6 +1,6 @@
 --select * from MEGHDOOT order by DateTime desc
---select * from SINGLEPHASEANALYSER order by DateTime desc
-select * from THREEPHASEANALYSER order by DateTime desc
+select * from SINGLEPHASEANALYSER order by DateTime desc
+--select * from THREEPHASEANALYSER order by DateTime desc
 
 
 
