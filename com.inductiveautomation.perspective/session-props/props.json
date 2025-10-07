@@ -57,7 +57,7 @@
     }
   },
   "props": {
-    "address": "10.107.34.74",
+    "address": "10.107.35.7",
     "device": {},
     "geolocation": {},
     "locale": "en-US",
