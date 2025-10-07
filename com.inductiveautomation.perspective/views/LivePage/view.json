@@ -1289,7 +1289,7 @@
               },
               "transforms": [
                 {
-                  "code": "\t\t\t\n    pyData \u003d system.dataset.toPyDataSet(value)\n    if pyData and len(pyData) \u003e 0:\n        return round(pyData[0][0]/1000,2)  # First row, first column\n    else:\n        return \"N/A\"",
+                  "code": "\tpyData \u003d system.dataset.toPyDataSet(value)\n\t\n\tif pyData and len(pyData) \u003e 0:\n\t    firstValue \u003d pyData[0][0]\n\t    if firstValue is not None:\n\t        return round(firstValue / 1000, 2)\n\t    else:\n\t        return \"N/A\"\n\telse:\n\t    return \"N/A\"",
                   "type": "script"
                 }
               ],

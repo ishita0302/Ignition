@@ -1,5 +1,5 @@
---select * from MEGHDOOT order by DateTime desc
-select * from SINGLEPHASEANALYSER order by DateTime desc
+select * from MEGHDOOT order by DateTime desc
+--select * from SINGLEPHASEANALYSER order by DateTime desc
 --select * from THREEPHASEANALYSER order by DateTime desc
 
 
@@ -80,7 +80,7 @@ select * from SINGLEPHASEANALYSER order by DateTime desc
 --select * from MEGHDOOT
 
 --SELECT * FROM MOTORTESTLAB
---select * from CONSUMPTION where DateTime = '2025-08-13 00:00:00'
+--select * from CONSUMPTION where DateTime = '2025-10-01 00:00:00'
 --update CONSUMPTION set WATER_CONSUMED = 1 where DateTime = '2025-08-13 00:00:00'
 
 --SELECT 

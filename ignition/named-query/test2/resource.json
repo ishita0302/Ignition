@@ -18,7 +18,7 @@
     "cacheEnabled": false,
     "database": "NewConnection",
     "fallbackEnabled": false,
-    "lastModificationSignature": "bdb2eab5ad6f7323003386966dde15b9f8a184e0aa7989e4fb5ca4dc6a1e2037",
+    "lastModificationSignature": "9c278b5a45dda070d7ede69c16cb1455df20f013488a9f28f5bd7860ae7634ae",
     "permissions": [
       {
         "zone": "",
@@ -27,7 +27,7 @@
     ],
     "lastModification": {
       "actor": "admin_IoT_Lab",
-      "timestamp": "2025-10-06T05:25:39Z"
+      "timestamp": "2025-10-07T10:41:54Z"
     }
   }
 }
