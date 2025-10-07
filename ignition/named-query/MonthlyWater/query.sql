@@ -1,6 +1,6 @@
 SELECT
     (TRY_CAST(LastReading.FlowMeter26_TotalFlow AS FLOAT) - TRY_CAST(FirstReading.FlowMeter26_TotalFlow AS FLOAT)) +
-    4 AS [Total_Consumed]
+    (TRY_CAST(LastReading.FlowMeter25_TotalFlow AS FLOAT) - TRY_CAST(FirstReading.FlowMeter25_TotalFlow AS FLOAT)) AS [Total_Consumed]
 FROM 
     (
         SELECT 
