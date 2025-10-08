@@ -16,7 +16,7 @@ SELECT
   B.Sensor7,
   B.Sensor8,
   C."Pow_Ana_ThreePhase1_Urms&#00931;" AS Urms,
-  C. "Pow_Ana_ThreePhase1_Irms&#00931;" AS Irms,
+  C."Pow_Ana_ThreePhase1_Irms&#00931;" AS Irms,
   C."Pow_Ana_ThreePhase1_Lambda&#00931;" AS Lambda,
   C."Pow_Ana_ThreePhase1_P&#00931;" AS P,
   C."Pow_Ana_ThreePhase1_S&#00931;" AS S,
@@ -24,10 +24,10 @@ SELECT
   C."Pow_Ana_ThreePhase1_fI1" AS fI1
 FROM 
   SINGLEPHASEANALYSER A
-JOIN 
+LEFT JOIN 
   MEGHDOOT B 
     ON A.DateTime = B.DateTime
-JOIN 
+LEFT JOIN 
   THREEPHASEANALYSER C 
     ON A.DateTime = C.DateTime
 WHERE 
